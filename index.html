@@ -62,39 +62,48 @@
         background: #f8f8f8;
       }
       #bg-image {
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        background-position: center center;
-        background-size: contain;
-        z-index: -1;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-position: center center !important;
+        background-size: cover !important; /* Fill the whole screen */
+        background-repeat: no-repeat !important;
+      }
+      #menu-toggle {
+        display: block !important;
       }
       .menu {
-        width: 100vw;
-        height: 56px;
+        width: 80vw;
+        max-width: 320px;
+        height: auto;
         position: fixed;
         top: 0;
         left: 0;
-        display: flex;
-        flex-direction: row;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        padding-top: 0;
-        z-index: 10;
+        flex-direction: column !important;
         background: rgba(255,255,255,0.97);
-        align-items: center;
-        border-radius: 0 0 12px 12px;
+        box-shadow: 2px 0 16px #0002;
+        border-radius: 0 0 16px 0;
+        z-index: 99;
+        padding-top: 56px;
+        display: none;
+        transition: transform 0.3s;
+      }
+      .menu.open {
+        display: flex !important;
+        transform: translateY(0);
       }
       .menu a {
-        flex: 1;
-        text-align: center;
-        padding: 8px 2px;
-        font-size: 0.95em;
-        min-width: 0;
-        white-space: nowrap;
+        flex: none !important;
+        text-align: left;
+        padding: 18px 24px;
+        font-size: 1.1em;
+        border-bottom: 1px solid #eee;
+        white-space: normal;
         border-radius: 0;
-        border-bottom: 2px solid transparent;
-        transition: background 0.2s, border-bottom 0.2s;
+        transition: background 0.2s;
+        min-width: 0;
+        word-break: break-word;
       }
       .menu a.active, .menu a:hover {
         background: #e0e0e0;
@@ -102,11 +111,9 @@
       }
       .lang-switch {
         position: fixed;
-        top: 62px;
-        right: 10px;
-        z-index: 20;
-        margin: 0;
-        text-align: right;
+        top: 12px;
+        right: 12px;
+        z-index: 100;
         background: rgba(255,255,255,0.85);
         border-radius: 16px;
         padding: 2px 6px;
@@ -118,8 +125,8 @@
         margin-left: 6px;
       }
       .content {
-        margin-left: 0;
-        margin-top: 70px; /* Height of menu bar + lang switch */
+        margin-left: 0 !important;
+        margin-top: 70px !important;
         padding: 16px 8px;
         border-radius: 10px;
         box-shadow: 0 2px 12px rgba(0,0,0,0.07);
@@ -211,6 +218,9 @@
   </style>
 </head>
 <body>
+  <button id="menu-toggle" aria-label="Open menu" style="display:none;position:fixed;top:12px;left:12px;z-index:100;background:#fff;border:none;padding:8px 12px;border-radius:8px;box-shadow:0 2px 8px #0002;">
+    <span style="font-size:2em;">&#9776;</span>
+  </button>
   <nav class="menu">
     <a href="#" data-page="home" class="active">🏠 <span class="lang" data-en="Home" data-pt="Início" data-de="Startseite">Home</span></a>
     <a href="#" data-page="form">📝 <span class="lang" data-en="RSVP" data-pt="Confirmação" data-de="Anmeldung">RSVP</span></a>
@@ -473,11 +483,11 @@
     // Menu navigation and background switching
     function setBackground(imgUrl) {
       const bg = document.getElementById('bg-image');
-      bg.style.left = '200px'; // Always start right of the menu
-      bg.style.width = 'calc(100vw - 200px)';
+      bg.style.left = '0';
+      bg.style.width = '100vw';
       bg.style.backgroundImage = `url('${imgUrl}')`;
-      bg.style.backgroundRepeat = 'repeat'; // Tile the image to fill the space
-      bg.style.backgroundSize = 'contain';  // Show the full image in each tile
+      bg.style.backgroundRepeat = 'no-repeat';
+      bg.style.backgroundSize = 'cover';
       bg.style.backgroundPosition = 'center center';
     }
     // Initial background image
@@ -541,6 +551,29 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
     }
+
+    // Mobile menu toggle logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuToggle.addEventListener('click', function() {
+      menu.classList.toggle('open');
+    });
+
+    // Hide menu when a link is clicked (on mobile)
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+        let page = this.dataset.page;
+        document.querySelectorAll('.content > div').forEach(div => {
+          div.style.display = div.dataset.content === page ? '' : 'none';
+        });
+        if (window.innerWidth <= 700) {
+          menu.classList.remove('open');
+        }
+      });
+    });
   </script>
 </body>
 </html>
