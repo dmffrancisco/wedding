@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Wedding in Elvas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+    #bg-image {
+      position: absolute;
+      top: 0;
+      left: 200px; /* Start right of the menu bar */
+      width: calc(100vw - 200px);
+      height: 100vh;
+      z-index: -1;
+      background: url('https://i.imgur.com/W4qkc5r.jpeg') no-repeat center center;
+      background-size: contain; /* Show the full image, keep aspect ratio */
+      transition: background-image 0.5s, background-size 0.5s, background-repeat 0.5s, background-position 0.5s;
+    }
+    #bg-image.gift-bg {
+      background: url('https://i.imgur.com/QZ8bvDU.jpg') repeat;
+      background-size: auto;
+    }
+
+    /* Make menu and content readable */
+    .menu {
+      position: fixed; top: 0; left: 0; width: 200px; height: 100vh;
+      background: rgba(255,255,255,0.85); /* semi-transparent white */
+      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      color: #222;
+    }
+    .menu a {
+      display: block; padding: 15px 20px; color: #222; text-decoration: none;
+    }
+    .menu a.active, .menu a:hover { background: #e0e0e0; }
+
+    .lang-switch {
+      position: fixed; top: 20px; right: 30px;
+    }
+    .lang-switch img {
+      width: 32px; height: 32px; margin-left: 10px; cursor: pointer;
+      border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 3px #aaa;
+    }
+    .content {
+      margin-left: 220px; padding: 40px 20px;
+      background: rgba(255,255,255,0.85); /* semi-transparent white */
+      color: #222;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    }
+    @media (max-width: 700px) {
+      .menu { width: 100vw; height: auto; position: static; display: flex; flex-direction: row; box-shadow: none; }
+      .menu a { flex: 1; text-align: center; padding: 10px; }
+      .content { margin-left: 0; padding: 20px 10px; }
+      .lang-switch { position: static; margin: 10px 0; text-align: right; }
+      #bg-image { left: 0; width: 100vw; }
+    }
+    .splitflap-countdown {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2em;
+      flex-wrap: wrap;
+    }
+    .splitflap-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .splitflap-label {
+      font-size: 0.5em;
+      color: #eee; /* lighter for visibility */
+      margin-top: 4px;
+      letter-spacing: 1px;
+    }
+    .splitflap-flap {
+      background: #222;
+      color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px #0003;
+      padding: 18px 16px 10px 16px;
+      min-width: 60px;
+      text-align: center;
+      font-size: 1.2em;
+      letter-spacing: 2px;
+      position: relative;
+      border-bottom: 4px solid #444;
+      transition: background 0.2s;
+    }
+    h1, h2, h3 {
+      color: #222;
+      text-shadow: 0 2px 8px #fff8;
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu">
+    <a href="#" data-page="home" class="active">🏠 <span class="lang" data-en="Home" data-pt="Início" data-de="Startseite">Home</span></a>
+    <a href="#" data-page="form">📝 <span class="lang" data-en="RSVP" data-pt="Confirmação" data-de="Anmeldung">RSVP</span></a>
+    <a href="#" data-page="location">📍 <span class="lang" data-en="Where to stay?" data-pt="Onde ficar?" data-de="Übernachtung?">Where to stay?</span></a>
+    <a href="#" data-page="whattodo">🗺️ <span class="lang"
+      data-en="What to do?"
+      data-pt="O que fazer?"
+      data-de="Was kann man tun?">What to do?</span></a>
+    <a href="#" data-page="wheretoeat">🍽️ <span class="lang"
+      data-en="Where and What to eat?"
+      data-pt="Onde e o que comer?"
+      data-de="Wo und was essen?">Where and What to eat?</span></a>
+    <a href="#" data-page="babysitter">🧸 <span class="lang"
+      data-en="Babysitter"
+      data-pt="Babá"
+      data-de="Babysitter">Babysitter</span></a>
+    <a href="#" data-page="gift">🎁 <span class="lang" data-en="Gift" data-pt="Presente" data-de="Geschenk">Gift</span></a>
+    <a href="#" data-page="playlist">🎵 <span class="lang"
+      data-en="Playlist"
+      data-pt="Playlist"
+      data-de="Playlist">Playlist</span></a>
+    <a href="#" data-page="upload">📷 <span>Upload Photos/Videos</span></a>
+  </nav>
+  <div id="bg-image"></div>
+  <div class="lang-switch">
+    <img src="https://flagcdn.com/gb.svg" alt="English" data-lang="en" title="English">
+    <img src="https://flagcdn.com/pt.svg" alt="Português" data-lang="pt" title="Português">
+    <img src="https://flagcdn.com/de.svg" alt="Deutsch" data-lang="de" title="Deutsch">
+  </div>
+  <div class="content" id="main-content">
+    <!-- Home page content -->
+    <div data-content="home">
+      <h1 class="lang" 
+          data-en="Welcome to our wedding!" 
+          data-pt="Bem-vindo ao nosso casamento!" 
+          data-de="Willkommen zu unserer Hochzeit!">
+        Welcome to our wedding!
+        <span style="font-size:1.2em; margin-left:10px;">
+          <span title="Groom sock" style="color:#3498db;">🧦</span>
+          <span title="Bride sock" style="color:#e74c3c;">🧦</span>
+        </span>
+      </h1>
+      <p class="lang" data-en="We are so happy to celebrate with you in Elvas, Portugal. Here you will find all the information you need for our special day." 
+         data-pt="Estamos muito felizes por celebrar convosco em Elvas, Portugal. Aqui encontrará toda a informação necessária para o nosso dia especial."
+         data-de="Wir freuen uns sehr, mit euch in Elvas, Portugal zu feiern. Hier findet ihr alle Informationen für unseren besonderen Tag.">
+         We are so happy to celebrate with you in Elvas, Portugal. Here you will find all the information you need for our special day.
+      </p>
+      <div id="countdown" class="splitflap-countdown" style="margin-top:30px;"></div>
+
+      <!-- Wedding date and location info -->
+      <div style="margin-top:30px; font-size:1.2em;">
+        <strong class="lang" 
+          data-en="Date & Time:" 
+          data-pt="Data & Hora:" 
+          data-de="Datum & Uhrzeit:">Date & Time:</strong>
+        <span class="lang" 
+          data-en="12th of September 2026, 5:00 PM" 
+          data-pt="12 de setembro de 2026, 17:00" 
+          data-de="12. September 2026, 17:00 Uhr">12th of September 2026, 5:00 PM</span>
+        <br>
+        <strong class="lang" 
+          data-en="Location:" 
+          data-pt="Local:" 
+          data-de="Ort:">Location:</strong>
+        <span class="lang" 
+          data-en="Elvas, Portugal" 
+          data-pt="Elvas, Portugal" 
+          data-de="Elvas, Portugal">Elvas, Portugal</span>
+      </div>
+
+      <!-- Google Maps widget for the new location -->
+      <div style="margin-top:20px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.6887768597426!2d-7.2060975!3d38.8853618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd171ba3f8ec8e55%3A0x20fb7823b6123ec3!2sQuinta%20do%20Pomarinho%2C%20Elvas%2C%20Portugal!5e0!3m2!1sen!2spt!4v1716220000000!5m2!1sen!2spt"
+          width="350" height="350" style="border:0; border-radius:10px; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <!-- RSVP page content -->
+    <div data-content="form" style="display:none;">
+      <h1 class="lang" data-en="RSVP" data-pt="Confirmação de presença" data-de="Anmeldung">RSVP</h1>
+      <p class="lang" data-en="Please fill out the form below to let us know if you can join us!" 
+         data-pt="Por favor, preencha o formulário abaixo para nos informar se pode estar presente!"
+         data-de="Bitte füllt das untenstehende Formular aus, damit wir wissen, ob ihr dabei seid!">
+         Please fill out the form below to let us know if you can join us!
+      </p>
+      <!-- Embed your Google Form here -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdg_Vmv7J51bOmx0ROHvW0bP0KbNjkNpS0RWNibmBdtgF4UJw/viewform?usp=header" width="100%" height="600" frameborder="0"></iframe>
+    </div>
+    <!-- Location page content -->
+    <div data-content="location" style="display:none;">
+      <h1 class="lang" 
+          data-en="Where to stay?" 
+          data-pt="Onde ficar?" 
+          data-de="Übernachtung?">Where to stay?</h1>
+      
+      <!-- Airbnb Section -->
+      <h2 class="lang" 
+          data-en="Airbnbs" 
+          data-pt="Airbnbs" 
+          data-de="Airbnbs">Airbnbs</h2>
+      <ul>
+        <li><a href="https://www.airbnb.pt/rooms/52482244" target="_blank">Elvas the Queen Residence</a> (2 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/1359714170217911999" target="_blank">Apartment</a> (2 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/10196297" target="_blank">Apartment</a> (2 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/1489209034787998203" target="_blank">Apartment in the city center</a> (2 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/614332882527550684" target="_blank">Apartment outside the city</a> (2 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/36672375" target="_blank">Monte da Graca Property</a> (4 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/26491702" target="_blank">Apartment in the city center</a> (4 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/53407741" target="_blank">Apartment near the castle</a> (4 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/26944712" target="_blank">Apartment in the city center</a> (4 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/27982196" target="_blank">Chale Chafariz del Rei</a> (5 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/1413026728680815790" target="_blank">Casa da Edda Apartment</a> (6 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/18021406" target="_blank">Casa de fazenda</a> (6 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/26941817" target="_blank">Apartment in the city center</a> (6 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/5872521" target="_blank">Apartment in the city</a> (6 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/1211539339049518365" target="_blank">Big house in the outskirts of the city</a> (8 pax)</li>
+        <li><a href="https://www.airbnb.pt/rooms/1374133424214593731" target="_blank">Big House in the outskirts of the city</a> (12 pax)</li>
+      </ul>
+
+      <!-- Hotels Section -->
+      <h2 class="lang" 
+          data-en="Hotels" 
+          data-pt="Hotéis" 
+          data-de="Hotels">Hotels</h2>
+      <ul>
+        <li><a href="https://www.hoteldomluiselvas.com/" target="_blank">Hotel Dom Luis - Elvas</a></li>
+        <li><a href="https://www.saojoaodedeushotel.com/" target="_blank">São João de Deus Hotel (Official Site)</a></li>
+        <li><a href="https://www.montedaprovença.com/" target="_blank">Hotel Rural Monte da Provença</a></li>
+        <li><a href="https://www.vilagale.com/en/hotels/alentejo/vila-gale-collection-elvas" target="_blank">Vila Galé Collection Elvas</a></li>
+        <li><a href="https://www.vilagale.com/en/hotels/alentejo/vila-gale-casas-de-elvas" target="_blank">Vila Gale Casas de Elvas</a></li>
+        <li><a href="https://www.hotelbrasa.com/" target="_blank">Hotel Brasa</a></li>
+        <li><a href="https://www.varchotel.com/" target="_blank">Varchotel Hotel Elvas</a></li>
+        <li><a href="https://www.residenciallusoespanhola.com/" target="_blank">Residencial Luso-Espanhola</a></li>
+        <li><a href="https://www.booking.com/hotel/pt/elvas-old-town-group.en-gb.html" target="_blank">Elvas Old Town Group</a></li>
+        <li><a href="https://www.booking.com/hotel/pt/residencial-antonio-mocisso.en-gb.html" target="_blank">Residencial Antonio Mocisso</a></li>
+        <li><a href="https://www.booking.com/hotel/pt/sao-joao-de-deus.en-gb.html" target="_blank">Hotel São João de Deus</a></li>
+      </ul>
+    </div>
+    <!-- What to do? section -->
+    <div data-content="whattodo" style="display:none;">
+      <h1 class="lang"
+          data-en="What to do?"
+          data-pt="O que fazer?"
+          data-de="Was kann man tun?">
+        What to do?
+      </h1>
+      <p class="lang"
+         data-en="Discover activities and sights in and around Elvas to enjoy during your stay."
+         data-pt="Descubra atividades e pontos turísticos em Elvas e arredores para aproveitar durante a sua estadia."
+         data-de="Entdecken Sie Aktivitäten und Sehenswürdigkeiten in und um Elvas, die Sie während Ihres Aufenthalts genießen können.">
+        Discover activities and sights in and around Elvas to enjoy during your stay.
+      </p>
+      <!-- Add your recommendations here -->
+    </div>
+
+    <!-- Where and What to eat? section -->
+    <div data-content="wheretoeat" style="display:none;">
+      <h1 class="lang"
+          data-en="Where and What to eat?"
+          data-pt="Onde e o que comer?"
+          data-de="Wo und was essen?">
+        Where and What to eat?
+      </h1>
+      <p class="lang"
+         data-en="Find our favorite restaurants and local dishes to try in Elvas."
+         data-pt="Veja os nossos restaurantes favoritos e pratos típicos para experimentar em Elvas."
+         data-de="Entdecken Sie unsere Lieblingsrestaurants und lokale Gerichte in Elvas.">
+        Find our favorite restaurants and local dishes to try in Elvas.
+      </p>
+      <!-- Add your food recommendations here -->
+    </div>
+
+    <!-- Babysitter section -->
+    <div data-content="babysitter" style="display:none;">
+      <h1 class="lang"
+          data-en="Babysitter"
+          data-pt="Babysitter"
+          data-de="Babysitter">
+        Babysitter
+      </h1>
+      <p class="lang"
+         data-en="Need help with childcare during the wedding? Here are some babysitter options."
+         data-pt="Precisa de ajuda com crianças durante o casamento? Veja algumas opções de babá."
+         data-de="Brauchen Sie Hilfe mit der Kinderbetreuung während der Hochzeit? Hier sind einige Babysitter-Optionen.">
+        Need help with childcare during the wedding? Here are some babysitter options.
+      </p>
+      <!-- Add babysitter info here -->
+    </div>
+    <!-- Gift page content (third to last) -->
+    <div data-content="gift" style="display:none;">
+      <h1 class="lang" data-en="Wedding Gift" data-pt="Presente de Casamento" data-de="Hochzeitsgeschenk">Wedding Gift</h1>
+      <p class="lang" data-en="Your presence is the greatest gift! If you wish to contribute, here is how." 
+         data-pt="A sua presença é o maior presente! Se desejar contribuir, veja como."
+         data-de="Eure Anwesenheit ist das schönste Geschenk! Wenn ihr etwas beitragen möchtet, hier erfahrt ihr wie.">
+         Your presence is the greatest gift! If you wish to contribute, here is how.
+      </p>
+      <!-- Add gift details here -->
+    </div>
+    <!-- Playlist page content (second to last) -->
+    <div data-content="playlist" style="display:none;">
+      <h1 class="lang"
+          data-en="Our Wedding Playlist"
+          data-pt="A nossa playlist de casamento"
+          data-de="Unsere Hochzeits-Playlist">
+        Our Wedding Playlist
+      </h1>
+      <p class="lang"
+         data-en="Enjoy the songs that will make our day special!"
+         data-pt="Desfrute das músicas que tornarão o nosso dia especial!"
+         data-de="Genießt die Lieder, die unseren Tag besonders machen!">
+        Enjoy the songs that will make our day special!
+      </p>
+      <!-- Replace the src below with your own Spotify playlist embed link -->
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0xnI1AvsOR9cAGoSsJkG5Q?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <!-- Upload page content (last) -->
+    <div data-content="upload" style="display:none;">
+      <h1 class="lang"
+          data-en="Share Your Photos & Videos!"
+          data-pt="Partilhe as suas fotos e vídeos!"
+          data-de="Teile deine Fotos & Videos!">
+        Share Your Photos & Videos!
+      </h1>
+      <p class="lang"
+         data-en="We'd love to see your memories from our wedding. Please upload your photos and videos using the link below:"
+         data-pt="Adoraríamos ver as suas memórias do nosso casamento. Por favor, carregue as suas fotos e vídeos usando o link abaixo:"
+         data-de="Wir würden uns freuen, eure Erinnerungen von unserer Hochzeit zu sehen. Bitte ladet eure Fotos und Videos über den untenstehenden Link hoch:">
+        We'd love to see your memories from our wedding. Please upload your photos and videos using the link below:
+      </p>
+      <a href="https://www.dropbox.com/request/FdBlHCrH85W0kP5ZQc6Q" target="_blank" style="font-size:1.2em; color:#3498db;" class="lang"
+         data-en="📷 Upload to our Dropbox"
+         data-pt="📷 Carregar para o nosso Dropbox"
+         data-de="📷 Hochladen zu unserem Dropbox">
+        📷 Upload to our Dropbox
+      </a>
+    </div>
+  </div>
+  <script>
+    // Language switching
+    let currentLang = "en";
+    document.querySelectorAll('.lang-switch img').forEach(flag => {
+      flag.addEventListener('click', function() {
+        currentLang = this.dataset.lang;
+        document.querySelectorAll('.lang').forEach(el => {
+          if (el.dataset[currentLang]) el.textContent = el.dataset[currentLang];
+        });
+      });
+    });
+
+    // Menu navigation and background switching
+    function setBackground(imgUrl) {
+      const bg = document.getElementById('bg-image');
+      bg.style.left = '200px'; // Always start right of the menu
+      bg.style.width = 'calc(100vw - 200px)';
+      bg.style.backgroundImage = `url('${imgUrl}')`;
+      bg.style.backgroundRepeat = 'repeat'; // Tile the image to fill the space
+      bg.style.backgroundSize = 'contain';  // Show the full image in each tile
+      bg.style.backgroundPosition = 'center center';
+    }
+    // Initial background image
+    setBackground('https://i.imgur.com/W4qkc5r.jpeg');
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+        let page = this.dataset.page;
+        document.querySelectorAll('.content > div').forEach(div => {
+          div.style.display = div.dataset.content === page ? '' : 'none';
+        });
+        // Change background image depending on section
+        if (page === "location") {
+          setBackground('https://i.imgur.com/B6TfqzH.jpg');
+        } else if (page === "gift") {
+          setBackground('https://i.imgur.com/QZ8bvDU.jpg');
+        } else {
+          setBackground('https://i.imgur.com/W4qkc5r.jpeg');
+        }
+      });
+    });
+
+    // Countdown clock for the wedding date
+    function pad(n) { return n < 10 ? '0' + n : n; }
+    function updateCountdown() {
+      const weddingDate = new Date("2026-09-12T17:00:00");
+      const now = new Date();
+      const diff = weddingDate - now;
+      const container = document.getElementById("countdown");
+      if (!container) return;
+      if (diff <= 0) {
+        container.innerHTML = '<span class="splitflap-flap" style="font-size:1.5em;">It\'s wedding time!</span>';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      container.innerHTML = `
+        <div class="splitflap-unit">
+          <div class="splitflap-flap">${pad(days)}</div>
+          <div class="splitflap-label">Days</div>
+        </div>
+        <div class="splitflap-unit">
+          <div class="splitflap-flap">${pad(hours)}</div>
+          <div class="splitflap-label">Hours</div>
+        </div>
+        <div class="splitflap-unit">
+          <div class="splitflap-flap">${pad(minutes)}</div>
+          <div class="splitflap-label">Minutes</div>
+        </div>
+        <div class="splitflap-unit">
+          <div class="splitflap-flap">${pad(seconds)}</div>
+          <div class="splitflap-label">Seconds</div>
+        </div>
+      `;
+    }
+    if (document.getElementById("countdown")) {
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+  </script>
+</body>
+</html>
