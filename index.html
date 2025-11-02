@@ -3,6 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Join us for our wedding celebration in Elvas, Portugal on September 12th, 2026. Find all the information you need for our special day.">
+  <meta name="keywords" content="wedding, casamento, Hochzeit, Elvas, Portugal, September 2026">
+  <meta name="author" content="Wedding Couple">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="Our Wedding in Elvas - September 12th, 2026">
+  <meta property="og:description" content="Join us for our wedding celebration in Elvas, Portugal. All the information you need for our special day.">
+  <meta property="og:image" content="https://i.imgur.com/W4qkc5r.jpeg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Our Wedding in Elvas - September 12th, 2026">
+  <meta property="twitter:description" content="Join us for our wedding celebration in Elvas, Portugal. All the information you need for our special day.">
+  <meta property="twitter:image" content="https://i.imgur.com/W4qkc5r.jpeg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  
   <title>Our Wedding in Elvas</title>
   <style>
     body {
@@ -46,6 +66,13 @@
     .lang-switch img {
       width: 32px; height: 32px; margin-left: 10px; cursor: pointer;
       border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 3px #aaa;
+      transition: all 0.3s ease;
+      opacity: 0.6;
+    }
+    .lang-switch img:hover {
+      transform: scale(1.1);
+      opacity: 1;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
     }
     .content {
       margin-left: 220px; padding: 40px 20px;
@@ -60,6 +87,7 @@
         min-height: 100vh;
         overflow-x: hidden;
         background: #f8f8f8;
+        font-size: 16px; /* Ensure readable font size on mobile */
       }
       #bg-image {
         left: 0 !important;
@@ -215,9 +243,51 @@
       color: #222;
       text-shadow: 0 2px 8px #fff8;
     }
+    /* Loading animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    .loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Smooth page transitions */
+    .content > div {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+  </div>
   <button id="menu-toggle" aria-label="Open menu" style="display:none;position:fixed;top:12px;left:12px;z-index:100;background:#fff;border:none;padding:8px 12px;border-radius:8px;box-shadow:0 2px 8px #0002;">
     <span style="font-size:2em;">&#9776;</span>
   </button>
@@ -374,16 +444,163 @@
          data-de="Entdecken Sie Aktivitäten und Sehenswürdigkeiten in und um Elvas, die Sie während Ihres Aufenthalts genießen können.">
         Discover activities and sights in and around Elvas to enjoy during your stay.
       </p>
-      <div style="margin-top:20px;">
-        <iframe width="100%" height="315"
-          src="https://www.youtube.com/embed/ILjVpGl5yqE"
-          title="YouTube video: Elvas"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div style="margin-top:20px; padding: 20px; background: rgba(52, 152, 219, 0.1); border-radius: 10px; border-left: 4px solid #3498db;">
+        <h3 style="margin-top: 0; color: #3498db;" class="lang" 
+            data-en="📺 Watch Videos About Elvas"
+            data-pt="📺 Veja Vídeos Sobre Elvas"
+            data-de="📺 Videos über Elvas ansehen">
+          📺 Watch Videos About Elvas
+        </h3>
+        <p class="lang" 
+           data-en="Discover the beauty of Elvas through videos! Search for these topics on YouTube:"
+           data-pt="Descubra a beleza de Elvas através de vídeos! Procure estes tópicos no YouTube:"
+           data-de="Entdecken Sie die Schönheit von Elvas durch Videos! Suchen Sie nach diesen Themen auf YouTube:">
+          Discover the beauty of Elvas through videos! Search for these topics on YouTube:
+        </p>
+        <ul style="margin: 10px 0;">
+          <li class="lang" data-en="🏰 'Elvas UNESCO World Heritage'" data-pt="🏰 'Elvas Património Mundial UNESCO'" data-de="🏰 'Elvas UNESCO-Welterbe'">🏰 'Elvas UNESCO World Heritage'</li>
+          <li class="lang" data-en="� 'Elvas Portugal Drone'" data-pt="🚁 'Elvas Portugal Drone'" data-de="🚁 'Elvas Portugal Drohne'">🚁 'Elvas Portugal Drone'</li>
+          <li class="lang" data-en="🏛️ 'Elvas Fortifications'" data-pt="🏛️ 'Fortificações de Elvas'" data-de="🏛️ 'Elvas Befestigungsanlagen'">🏛️ 'Elvas Fortifications'</li>
+        </ul>
+        <p>
+          <a href="https://www.youtube.com/results?search_query=Elvas+Portugal+UNESCO" target="_blank" style="color: #3498db; text-decoration: none; font-weight: bold;" class="lang"
+             data-en="🔗 Search YouTube for Elvas Videos"
+             data-pt="🔗 Procurar Vídeos de Elvas no YouTube"
+             data-de="🔗 YouTube nach Elvas-Videos durchsuchen">
+            🔗 Search YouTube for Elvas Videos
+          </a>
+        </p>
       </div>
-      <!-- Add your recommendations here -->
+
+      <h2 class="lang" data-en="🏰 In Elvas" data-pt="🏰 Em Elvas" data-de="🏰 In Elvas">🏰 In Elvas</h2>
+      
+      <h3 class="lang" data-en="🌟 Elvas Historic Center (UNESCO World Heritage)" data-pt="🌟 Centro Histórico de Elvas (Património Mundial UNESCO)" data-de="🌟 Historisches Zentrum von Elvas (UNESCO-Welterbe)">🌟 Elvas Historic Center (UNESCO World Heritage)</h3>
+      <p class="lang"
+         data-en="Explore the largest bulwarked fortification system in the world. Walk through the star-shaped fortress, visit the Amoreira Aqueduct, and discover the Nossa Senhora da Assunção Church."
+         data-pt="Explore o maior sistema de fortificação abaluartada do mundo. Caminhe pela fortaleza em forma de estrela, visite o Aqueduto da Amoreira e descubra a Igreja de Nossa Senhora da Assunção."
+         data-de="Erkunden Sie das größte Bastionsbefestigungssystem der Welt. Spazieren Sie durch die sternförmige Festung, besuchen Sie das Amoreira-Aquädukt und entdecken Sie die Kirche Nossa Senhora da Assunção.">
+        Explore the largest bulwarked fortification system in the world. Walk through the star-shaped fortress, visit the Amoreira Aqueduct, and discover the Nossa Senhora da Assunção Church.
+      </p>
+
+      <h3 class="lang" data-en="🏛️ Fort of Santa Luzia" data-pt="🏛️ Forte de Santa Luzia" data-de="🏛️ Fort Santa Luzia">🏛️ Fort of Santa Luzia</h3>
+      <p class="lang"
+         data-en="Visit this 17th-century military museum with impressive views over Elvas and the Spanish border. Perfect for history enthusiasts!"
+         data-pt="Visite este museu militar do século XVII com vistas impressionantes sobre Elvas e a fronteira espanhola. Perfeito para os entusiastas da história!"
+         data-de="Besuchen Sie dieses Militärmuseum aus dem 17. Jahrhundert mit beeindruckenden Aussichten über Elvas und die spanische Grenze. Perfekt für Geschichtsbegeisterte!">
+        Visit this 17th-century military museum with impressive views over Elvas and the Spanish border. Perfect for history enthusiasts!
+      </p>
+
+      <h3 class="lang" data-en="🌳 Municipal Garden and República Square" data-pt="🌳 Jardim Municipal e Praça da República" data-de="🌳 Stadtgarten und Praça da República">🌳 Municipal Garden and República Square</h3>
+      <p class="lang"
+         data-en="Relax in the beautiful municipal garden and enjoy a coffee in the charming main square surrounded by traditional Portuguese architecture."
+         data-pt="Relaxe no belo jardim municipal e desfrute de um café na encantadora praça principal rodeada pela arquitetura tradicional portuguesa."
+         data-de="Entspannen Sie sich im schönen Stadtgarten und genießen Sie einen Kaffee auf dem charmanten Hauptplatz, umgeben von traditioneller portugiesischer Architektur.">
+        Relax in the beautiful municipal garden and enjoy a coffee in the charming main square surrounded by traditional Portuguese architecture.
+      </p>
+
+      <h2 class="lang" data-en="🚗 Around Elvas (30-60km)" data-pt="🚗 Arredores de Elvas (30-60km)" data-de="🚗 Rund um Elvas (30-60km)">🚗 Around Elvas (30-60km)</h2>
+
+      <h3 class="lang" data-en="🚂 Rail Bike Marvão (40km)" data-pt="🚂 Rail Bike Marvão (40km)" data-de="🚂 Rail Bike Marvão (40km)">🚂 Rail Bike Marvão (40km)</h3>
+      <p class="lang"
+         data-en="Experience a unique adventure cycling on old railway tracks through the beautiful Alentejo countryside. A fun and eco-friendly way to explore the region with stunning mountain views."
+         data-pt="Experiencie uma aventura única pedalando nos antigos trilhos ferroviários através da bela paisagem alentejana. Uma forma divertida e ecológica de explorar a região com vistas deslumbrantes da serra."
+         data-de="Erleben Sie ein einzigartiges Abenteuer beim Radfahren auf alten Bahngleisen durch die wunderschöne Alentejo-Landschaft. Eine lustige und umweltfreundliche Art, die Region mit atemberaubenden Bergblicken zu erkunden.">
+        Experience a unique adventure cycling on old railway tracks through the beautiful Alentejo countryside. A fun and eco-friendly way to explore the region with stunning mountain views.
+      </p>
+      <p><a href="https://www.railbikemarvao.com/" target="_blank" class="lang" data-en="🔗 Book Rail Bike Experience" data-pt="🔗 Reserve Experiência Rail Bike" data-de="🔗 Rail Bike Erlebnis buchen">🔗 Book Rail Bike Experience</a></p>
+
+      <h3 class="lang" data-en="🌊 Caia Dam & Water Activities (20km)" data-pt="🌊 Albufeira do Caia e Atividades Aquáticas (20km)" data-de="🌊 Caia-Stausee & Wasseraktivitäten (20km)">🌊 Caia Dam & Water Activities (20km)</h3>
+      <p class="lang"
+         data-en="Enjoy water sports, fishing, and relaxation at this beautiful reservoir near Campo Maior. Perfect for swimming, kayaking, and picnicking with family and friends."
+         data-pt="Desfrute de desportos aquáticos, pesca e relaxamento nesta bela albufeira perto de Campo Maior. Perfeita para nadar, fazer caiaque e fazer piqueniques com família e amigos."
+         data-de="Genießen Sie Wassersport, Angeln und Entspannung an diesem schönen Stausee in der Nähe von Campo Maior. Perfekt zum Schwimmen, Kajakfahren und Picknicken mit Familie und Freunden.">
+        Enjoy water sports, fishing, and relaxation at this beautiful reservoir near Campo Maior. Perfect for swimming, kayaking, and picnicking with family and friends.
+      </p>
+      <p><a href="https://campomaior.pt/albufeira-do-caia/" target="_blank" class="lang" data-en="🔗 Discover Caia Dam" data-pt="🔗 Descubra a Albufeira do Caia" data-de="🔗 Entdecken Sie den Caia-Stausee">🔗 Discover Caia Dam</a></p>
+
+      <h3 class="lang" data-en="🏺 Estremoz (25km)" data-pt="🏺 Estremoz (25km)" data-de="🏺 Estremoz (25km)">🏺 Estremoz (25km)</h3>
+      <p class="lang"
+         data-en="Famous for its marble and pottery. Visit the medieval castle, explore the Saturday market, and admire the beautiful marble architecture throughout the town."
+         data-pt="Famosa pelo seu mármore e cerâmica. Visite o castelo medieval, explore o mercado de sábado e admire a bela arquitetura em mármore pela cidade."
+         data-de="Berühmt für seinen Marmor und die Töpferwaren. Besuchen Sie das mittelalterliche Schloss, erkunden Sie den Samstagsmarkt und bewundern Sie die schöne Marmorarchitektur in der ganzen Stadt.">
+        Famous for its marble and pottery. Visit the medieval castle, explore the Saturday market, and admire the beautiful marble architecture throughout the town.
+      </p>
+
+      <h3 class="lang" data-en="🍷 Vila Viçosa (40km)" data-pt="🍷 Vila Viçosa (40km)" data-de="🍷 Vila Viçosa (40km)">🍷 Vila Viçosa (40km)</h3>
+      <p class="lang"
+         data-en="The 'Princess of Alentejo' with its stunning Ducal Palace, marble streets, and excellent wine estates. Don't miss the Royal Palace and local wine tastings."
+         data-pt="A 'Princesa do Alentejo' com o seu deslumbrante Paço Ducal, ruas de mármore e excelentes quintas vinícolas. Não perca o Paço Real e as provas de vinhos locais."
+         data-de="Die 'Prinzessin des Alentejo' mit ihrem atemberaubenden Herzogspalast, Marmorstraßen und ausgezeichneten Weingütern. Verpassen Sie nicht den Königspalast und lokale Weinverkostungen.">
+        The 'Princess of Alentejo' with its stunning Ducal Palace, marble streets, and excellent wine estates. Don't miss the Royal Palace and local wine tastings.
+      </p>
+
+      <h3 class="lang" data-en="🍇 Adega Mayor Wine Tourism (35km)" data-pt="🍇 Enoturismo Adega Mayor (35km)" data-de="🍇 Adega Mayor Weintourismus (35km)">🍇 Adega Mayor Wine Tourism (35km)</h3>
+      <p class="lang"
+         data-en="Visit one of Alentejo's most prestigious wineries for guided tours, wine tastings, and stunning vineyard views. Experience the art of winemaking in this award-winning estate."
+         data-pt="Visite uma das adegas mais prestigiadas do Alentejo para visitas guiadas, provas de vinhos e vistas deslumbrantes dos vinhedos. Experiencie a arte da vinificação nesta propriedade premiada."
+         data-de="Besuchen Sie eines der prestigeträchtigsten Weingüter des Alentejo für geführte Touren, Weinverkostungen und atemberaubende Weinbergblicke. Erleben Sie die Kunst des Weinmachens auf diesem preisgekrönten Anwesen.">
+        Visit one of Alentejo's most prestigious wineries for guided tours, wine tastings, and stunning vineyard views. Experience the art of winemaking in this award-winning estate.
+      </p>
+      <p><a href="https://www.adegamayor.pt/pt/pt/enoturismo-alentejo?page=3" target="_blank" class="lang" data-en="🔗 Book Wine Tour at Adega Mayor" data-pt="🔗 Reserve Tour de Vinhos na Adega Mayor" data-de="🔗 Weintour bei Adega Mayor buchen">🔗 Book Wine Tour at Adega Mayor</a></p>
+
+      <h3 class="lang" data-en="☕ Coffee Science Center (30km)" data-pt="☕ Centro Ciência do Café (30km)" data-de="☕ Kaffee-Wissenschaftszentrum (30km)">☕ Coffee Science Center (30km)</h3>
+      <p class="lang"
+         data-en="Discover the fascinating world of coffee at this interactive science center. Learn about coffee cultivation, processing, and enjoy expertly brewed coffee while exploring the science behind your favorite drink."
+         data-pt="Descubra o fascinante mundo do café neste centro de ciência interativo. Aprenda sobre o cultivo, processamento do café e desfrute de café expertamente preparado enquanto explora a ciência por trás da sua bebida favorita."
+         data-de="Entdecken Sie die faszinierende Welt des Kaffees in diesem interaktiven Wissenschaftszentrum. Lernen Sie über Kaffeeanbau und -verarbeitung und genießen Sie fachmännisch gebrühten Kaffee, während Sie die Wissenschaft hinter Ihrem Lieblingsgetränk erkunden.">
+        Discover the fascinating world of coffee at this interactive science center. Learn about coffee cultivation, processing, and enjoy expertly brewed coffee while exploring the science behind your favorite drink.
+      </p>
+      <p><a href="https://www.centrocienciacafe.com/pt" target="_blank" class="lang" data-en="🔗 Visit Coffee Science Center" data-pt="🔗 Visite o Centro Ciência do Café" data-de="🔗 Besuchen Sie das Kaffee-Wissenschaftszentrum">🔗 Visit Coffee Science Center</a></p>
+
+      <h3 class="lang" data-en="⭐ Monsaraz (55km)" data-pt="⭐ Monsaraz (55km)" data-de="⭐ Monsaraz (55km)">⭐ Monsaraz (55km)</h3>
+      <p class="lang"
+         data-en="One of Portugal's most beautiful medieval villages, perched on a hilltop overlooking the Alqueva Lake. Perfect for sunset photography and romantic walks."
+         data-pt="Uma das mais belas aldeias medievais de Portugal, empoleirada numa colina com vista para o Lago Alqueva. Perfeita para fotografias do pôr do sol e caminhadas românticas."
+         data-de="Eines der schönsten mittelalterlichen Dörfer Portugals, auf einem Hügel mit Blick auf den Alqueva-See gelegen. Perfekt für Sonnenuntergangsfotografie und romantische Spaziergänge.">
+        One of Portugal's most beautiful medieval villages, perched on a hilltop overlooking the Alqueva Lake. Perfect for sunset photography and romantic walks.
+      </p>
+
+      <h3 class="lang" data-en="🌊 Alqueva Lake & Dark Sky Reserve (50km)" data-pt="🌊 Lago Alqueva e Reserva Dark Sky (50km)" data-de="🌊 Alqueva-See & Dark Sky Reserve (50km)">🌊 Alqueva Lake & Dark Sky Reserve (50km)</h3>
+      <p class="lang"
+         data-en="Europe's largest artificial lake offers water sports, boat trips, and the world's first Dark Sky Reserve for incredible stargazing experiences."
+         data-pt="O maior lago artificial da Europa oferece desportos aquáticos, passeios de barco e a primeira Reserva Dark Sky do mundo para experiências incríveis de observação das estrelas."
+         data-de="Europas größter Stausee bietet Wassersport, Bootsfahrten und das weltweit erste Dark Sky Reserve für unglaubliche Sternenbeobachtungserlebnisse.">
+        Europe's largest artificial lake offers water sports, boat trips, and the world's first Dark Sky Reserve for incredible stargazing experiences.
+      </p>
+
+      <h3 class="lang" data-en="�️ Colonel António Cachola Collection (45km)" data-pt="🏛️ Coleção Coronel António Cachola (45km)" data-de="🏛️ Sammlung Oberst António Cachola (45km)">🏛️ Colonel António Cachola Collection (45km)</h3>
+      <p class="lang"
+         data-en="Explore this fascinating private collection featuring military artifacts, vintage vehicles, and historical memorabilia. A unique museum experience showcasing Portuguese military heritage and history."
+         data-pt="Explore esta fascinante coleção privada com artefactos militares, veículos vintage e memorabilia histórica. Uma experiência museológica única que mostra o património militar português e a história."
+         data-de="Erkunden Sie diese faszinierende Privatsammlung mit militärischen Artefakten, Oldtimern und historischen Erinnerungsstücken. Ein einzigartiges Museumserlebnis, das das portugiesische Militärerbe und die Geschichte zeigt.">
+        Explore this fascinating private collection featuring military artifacts, vintage vehicles, and historical memorabilia. A unique museum experience showcasing Portuguese military heritage and history.
+      </p>
+      <p><a href="https://col-antoniocachola.com/?lang=en" target="_blank" class="lang" data-en="🔗 Visit Cachola Collection" data-pt="🔗 Visite a Coleção Cachola" data-de="🔗 Besuchen Sie die Cachola-Sammlung">🔗 Visit Cachola Collection</a></p>
+
+      <h3 class="lang" data-en="🏊 River Beaches of Alentejo" data-pt="🏊 Praias Fluviais do Alentejo" data-de="🏊 Flussbadestrände des Alentejo">🏊 River Beaches of Alentejo</h3>
+      <p class="lang"
+         data-en="Cool off at some of Alentejo's best river beaches! Discover hidden gems with crystal-clear freshwater, perfect for swimming and relaxing away from the summer heat."
+         data-pt="Refresque-se nas melhores praias fluviais do Alentejo! Descubra pérolas escondidas com água doce cristalina, perfeitas para nadar e relaxar longe do calor do verão."
+         data-de="Kühlen Sie sich an einigen der besten Flussbadestrände des Alentejo ab! Entdecken Sie versteckte Juwelen mit kristallklarem Süßwasser, perfekt zum Schwimmen und Entspannen fernab der Sommerhitze.">
+        Cool off at some of Alentejo's best river beaches! Discover hidden gems with crystal-clear freshwater, perfect for swimming and relaxing away from the summer heat.
+      </p>
+      <p><a href="https://www.vagamundos.pt/melhores-praias-fluviais-alentejo/" target="_blank" class="lang" data-en="🔗 Discover River Beaches Guide" data-pt="🔗 Descubra o Guia de Praias Fluviais" data-de="🔗 Entdecken Sie den Flussbadestrand-Führer">🔗 Discover River Beaches Guide</a></p>
+
+      <h3 class="lang" data-en="�🇪🇸 Badajoz, Spain (25km)" data-pt="🇪🇸 Badajoz, Espanha (25km)" data-de="🇪🇸 Badajoz, Spanien (25km)">🇪🇸 Badajoz, Spain (25km)</h3>
+      <p class="lang"
+         data-en="Cross the border for Spanish culture! Visit the Alcazaba fortress, explore the old town, enjoy tapas, and experience the vibrant Spanish nightlife."
+         data-pt="Atravesse a fronteira para a cultura espanhola! Visite a fortaleza da Alcaçaba, explore a cidade velha, desfrute de tapas e experiencie a vibrante vida noturna espanhola."
+         data-de="Überqueren Sie die Grenze für spanische Kultur! Besuchen Sie die Alcazaba-Festung, erkunden Sie die Altstadt, genießen Sie Tapas und erleben Sie das lebendige spanische Nachtleben.">
+        Cross the border for Spanish culture! Visit the Alcazaba fortress, explore the old town, enjoy tapas, and experience the vibrant Spanish nightlife.
+      </p>
+
+      <h2 class="lang" data-en="🎯 Activity Tips" data-pt="🎯 Dicas de Atividades" data-de="🎯 Aktivitätstipps">🎯 Activity Tips</h2>
+      <ul>
+        <li class="lang" data-en="🚗 Rent a car to explore the region comfortably" data-pt="🚗 Alugue um carro para explorar a região confortavelmente" data-de="🚗 Mieten Sie ein Auto, um die Region bequem zu erkunden">🚗 Rent a car to explore the region comfortably</li>
+        <li class="lang" data-en="📱 Download offline maps as mobile signal can be weak in rural areas" data-pt="📱 Descarregue mapas offline pois o sinal móvel pode ser fraco em áreas rurais" data-de="📱 Laden Sie Offline-Karten herunter, da das Mobilsignal in ländlichen Gebieten schwach sein kann">📱 Download offline maps as mobile signal can be weak in rural areas</li>
+        <li class="lang" data-en="🌅 Early morning or late afternoon visits offer the best light and fewer crowds" data-pt="🌅 Visitas de manhã cedo ou ao final da tarde oferecem a melhor luz e menos multidões" data-de="🌅 Besuche am frühen Morgen oder späten Nachmittag bieten das beste Licht und weniger Menschenmassen">🌅 Early morning or late afternoon visits offer the best light and fewer crowds</li>
+        <li class="lang" data-en="💧 Bring water and sun protection - Alentejo can get very hot!" data-pt="💧 Traga água e proteção solar - o Alentejo pode ficar muito quente!" data-de="💧 Bringen Sie Wasser und Sonnenschutz mit - das Alentejo kann sehr heiß werden!">💧 Bring water and sun protection - Alentejo can get very hot!</li>
+      </ul>
     </div>
 
     <!-- Where and What to eat? section -->
@@ -469,14 +686,69 @@
     </div>
   </div>
   <script>
-    // Language switching
-    let currentLang = "en";
+    // Language switching with auto-detection and localStorage persistence
+    let currentLang = localStorage.getItem('wedding-language') || detectBrowserLanguage();
+    
+    function detectBrowserLanguage() {
+      const browserLang = navigator.language || navigator.userLanguage;
+      if (browserLang.startsWith('pt')) return 'pt';
+      if (browserLang.startsWith('de')) return 'de';
+      return 'en'; // Default to English
+    }
+    
+    function switchLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('wedding-language', lang);
+      
+      // Update all text elements
+      document.querySelectorAll('.lang').forEach(el => {
+        if (el.dataset[currentLang]) {
+          el.textContent = el.dataset[currentLang];
+        }
+      });
+      
+      // Update countdown labels
+      updateCountdownLabels();
+      
+      // Update document language attribute
+      document.documentElement.lang = lang;
+      
+      // Visual feedback for active language
+      document.querySelectorAll('.lang-switch img').forEach(flag => {
+        flag.style.opacity = flag.dataset.lang === lang ? '1' : '0.6';
+        flag.style.transform = flag.dataset.lang === lang ? 'scale(1.1)' : 'scale(1)';
+      });
+    }
+    
+    function updateCountdownLabels() {
+      const labels = {
+        en: { days: 'Days', hours: 'Hours', minutes: 'Minutes', seconds: 'Seconds', wedding: "It's wedding time!" },
+        pt: { days: 'Dias', hours: 'Horas', minutes: 'Minutos', seconds: 'Segundos', wedding: 'É hora do casamento!' },
+        de: { days: 'Tage', hours: 'Stunden', minutes: 'Minuten', seconds: 'Sekunden', wedding: 'Hochzeitszeit!' }
+      };
+      window.countdownLabels = labels[currentLang] || labels.en;
+    }
+    
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      switchLanguage(currentLang);
+      
+      // Hide loading overlay
+      setTimeout(() => {
+        document.getElementById('loadingOverlay').classList.add('hidden');
+      }, 500);
+      
+      // Register service worker for offline capability (optional)
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+      }
+    });
+    
     document.querySelectorAll('.lang-switch img').forEach(flag => {
       flag.addEventListener('click', function() {
-        currentLang = this.dataset.lang;
-        document.querySelectorAll('.lang').forEach(el => {
-          if (el.dataset[currentLang]) el.textContent = el.dataset[currentLang];
-        });
+        switchLanguage(this.dataset.lang);
       });
     });
 
@@ -501,13 +773,48 @@
         document.querySelectorAll('.content > div').forEach(div => {
           div.style.display = div.dataset.content === page ? '' : 'none';
         });
-        // Change background image depending on section
-        if (page === "location") {
-          setBackground('https://i.imgur.com/B6TfqzH.jpg');
-        } else if (page === "gift") {
-          setBackground('https://i.imgur.com/QZ8bvDU.jpg');
-        } else {
-          setBackground('https://i.imgur.com/W4qkc5r.jpeg');
+        // Keep the same background image for all sections
+        setBackground('https://i.imgur.com/W4qkc5r.jpeg');
+        
+        // Update page title for better SEO and accessibility
+        const pageTitles = {
+          en: {
+            home: 'Home - Our Wedding in Elvas',
+            form: 'RSVP - Our Wedding in Elvas',
+            location: 'Where to Stay - Our Wedding in Elvas',
+            whattodo: 'What to Do - Our Wedding in Elvas',
+            wheretoeat: 'Where to Eat - Our Wedding in Elvas',
+            babysitter: 'Babysitter - Our Wedding in Elvas',
+            gift: 'Wedding Gift - Our Wedding in Elvas',
+            playlist: 'Playlist - Our Wedding in Elvas',
+            upload: 'Photo Upload - Our Wedding in Elvas'
+          },
+          pt: {
+            home: 'Início - Nosso Casamento em Elvas',
+            form: 'Confirmação - Nosso Casamento em Elvas',
+            location: 'Onde Ficar - Nosso Casamento em Elvas',
+            whattodo: 'O que Fazer - Nosso Casamento em Elvas',
+            wheretoeat: 'Onde Comer - Nosso Casamento em Elvas',
+            babysitter: 'Babá - Nosso Casamento em Elvas',
+            gift: 'Presente - Nosso Casamento em Elvas',
+            playlist: 'Playlist - Nosso Casamento em Elvas',
+            upload: 'Upload Fotos - Nosso Casamento em Elvas'
+          },
+          de: {
+            home: 'Startseite - Unsere Hochzeit in Elvas',
+            form: 'Anmeldung - Unsere Hochzeit in Elvas',
+            location: 'Übernachtung - Unsere Hochzeit in Elvas',
+            whattodo: 'Aktivitäten - Unsere Hochzeit in Elvas',
+            wheretoeat: 'Restaurants - Unsere Hochzeit in Elvas',
+            babysitter: 'Babysitter - Unsere Hochzeit in Elvas',
+            gift: 'Geschenk - Unsere Hochzeit in Elvas',
+            playlist: 'Playlist - Unsere Hochzeit in Elvas',
+            upload: 'Foto Upload - Unsere Hochzeit in Elvas'
+          }
+        };
+        
+        if (pageTitles[currentLang] && pageTitles[currentLang][page]) {
+          document.title = pageTitles[currentLang][page];
         }
       });
     });
@@ -520,30 +827,37 @@
       const diff = weddingDate - now;
       const container = document.getElementById("countdown");
       if (!container) return;
+      
+      const labels = window.countdownLabels || { 
+        days: 'Days', hours: 'Hours', minutes: 'Minutes', seconds: 'Seconds', wedding: "It's wedding time!" 
+      };
+      
       if (diff <= 0) {
-        container.innerHTML = '<span class="splitflap-flap" style="font-size:1.5em;">It\'s wedding time!</span>';
+        container.innerHTML = `<span class="splitflap-flap" style="font-size:1.5em;">${labels.wedding}</span>`;
         return;
       }
+      
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
+      
       container.innerHTML = `
         <div class="splitflap-unit">
           <div class="splitflap-flap">${pad(days)}</div>
-          <div class="splitflap-label">Days</div>
+          <div class="splitflap-label">${labels.days}</div>
         </div>
         <div class="splitflap-unit">
           <div class="splitflap-flap">${pad(hours)}</div>
-          <div class="splitflap-label">Hours</div>
+          <div class="splitflap-label">${labels.hours}</div>
         </div>
         <div class="splitflap-unit">
           <div class="splitflap-flap">${pad(minutes)}</div>
-          <div class="splitflap-label">Minutes</div>
+          <div class="splitflap-label">${labels.minutes}</div>
         </div>
         <div class="splitflap-unit">
           <div class="splitflap-flap">${pad(seconds)}</div>
-          <div class="splitflap-label">Seconds</div>
+          <div class="splitflap-label">${labels.seconds}</div>
         </div>
       `;
     }
