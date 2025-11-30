@@ -21,9 +21,9 @@
   <meta property="twitter:image" content="https://i.imgur.com/W4qkc5r.jpeg">
   
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  <link rel="icon" href="https://i.imgur.com/W4qkc5r.jpeg">
   
-  <title>Our Wedding in Elvas</title>
+  <title>Rita & David, 12/09/26</title>
   <style>
     body {
       margin: 0;
@@ -65,9 +65,10 @@
     }
     .lang-switch img {
       width: 32px; height: 32px; margin-left: 10px; cursor: pointer;
-      border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 3px #aaa;
+      border-radius: 4px; border: 2px solid #fff; box-shadow: 0 0 3px #aaa;
       transition: all 0.3s ease;
       opacity: 0.6;
+      object-fit: cover;
     }
     .lang-switch img:hover {
       transform: scale(1.1);
@@ -98,9 +99,7 @@
         background-size: cover !important; /* Fill the whole screen */
         background-repeat: no-repeat !important;
       }
-      #menu-toggle {
-        display: block !important;
-      }
+
       .menu {
         width: 80vw;
         max-width: 320px;
@@ -151,6 +150,7 @@
         width: 28px;
         height: 28px;
         margin-left: 6px;
+        object-fit: cover;
       }
       .content {
         margin-left: 0 !important;
@@ -207,11 +207,11 @@
     }
     .splitflap-countdown {
       display: flex;
-      gap: 12px;
-      justify-content: flex-start;
+      gap: 10px;
+      justify-content: center;
       align-items: center;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 2em;
+      font-size: 1.6em;
       flex-wrap: wrap;
     }
     .splitflap-unit {
@@ -221,27 +221,37 @@
     }
     .splitflap-label {
       font-size: 0.5em;
-      color: #eee; /* lighter for visibility */
+      color: #333; /* darker for better visibility */
       margin-top: 4px;
       letter-spacing: 1px;
+      font-weight: bold;
     }
     .splitflap-flap {
       background: #222;
       color: #fff;
       border-radius: 6px;
       box-shadow: 0 2px 8px #0003;
-      padding: 18px 16px 10px 16px;
-      min-width: 60px;
+      padding: 14px 12px 8px 12px;
+      min-width: 50px;
       text-align: center;
-      font-size: 1.2em;
-      letter-spacing: 2px;
+      font-size: 1em;
+      letter-spacing: 1px;
       position: relative;
-      border-bottom: 4px solid #444;
+      border-bottom: 3px solid #444;
       transition: background 0.2s;
     }
     h1, h2, h3 {
       color: #222;
       text-shadow: 0 2px 8px #fff8;
+    }
+    /* Site-wide hyperlink styling */
+    a {
+      color: #3A6604;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     /* Loading animation */
     .loading-overlay {
@@ -292,27 +302,27 @@
     <span style="font-size:2em;">&#9776;</span>
   </button>
   <nav class="menu">
-    <a href="#" data-page="home" class="active">🏠 <span class="lang" data-en="Home" data-pt="Início" data-de="Startseite">Home</span></a>
-    <a href="#" data-page="form">📝 <span class="lang" data-en="RSVP" data-pt="Confirmação" data-de="Anmeldung">RSVP</span></a>
-    <a href="#" data-page="location">📍 <span class="lang" data-en="Where to stay?" data-pt="Onde ficar?" data-de="Übernachtung?">Where to stay?</span></a>
-    <a href="#" data-page="whattodo">🗺️ <span class="lang"
+    <a href="#" data-page="home" class="active"><span class="lang" data-en="Home" data-pt="Início" data-de="Startseite">Home</span></a>
+    <a href="#" data-page="informations"><span class="lang"
+      data-en="Informations"
+      data-pt="Informações"
+      data-de="Informationen">Informations</span></a>
+    <a href="#" data-page="form"><span class="lang" data-en="RSVP" data-pt="Confirmação" data-de="Anmeldung">RSVP</span></a>
+    <a href="#" data-page="location"><span class="lang" data-en="Where to stay?" data-pt="Onde ficar?" data-de="Übernachtung?">Where to stay?</span></a>
+    <a href="#" data-page="whattodo"><span class="lang"
       data-en="What to do?"
       data-pt="O que fazer?"
       data-de="Was kann man tun?">What to do?</span></a>
-    <a href="#" data-page="wheretoeat">🍽️ <span class="lang"
+    <a href="#" data-page="wheretoeat"><span class="lang"
       data-en="Where and What to eat?"
       data-pt="Onde e o que comer?"
       data-de="Wo und was essen?">Where and What to eat?</span></a>
-    <a href="#" data-page="babysitter">🧸 <span class="lang"
-      data-en="Babysitter"
-      data-pt="Babá"
-      data-de="Babysitter">Babysitter</span></a>
-    <a href="#" data-page="gift">🎁 <span class="lang" data-en="Gift" data-pt="Presente" data-de="Geschenk">Gift</span></a>
-    <a href="#" data-page="playlist">🎵 <span class="lang"
+    <a href="#" data-page="gift"><span class="lang" data-en="Gift" data-pt="Presente" data-de="Geschenk">Gift</span></a>
+    <a href="#" data-page="playlist"><span class="lang"
       data-en="Playlist"
       data-pt="Playlist"
       data-de="Playlist">Playlist</span></a>
-    <a href="#" data-page="upload">📷 <span>Upload Photos/Videos</span></a>
+    <a href="#" data-page="upload"><span>Upload Photos/Videos</span></a>
   </nav>
   <div id="bg-image"></div>
   <div class="lang-switch">
@@ -325,7 +335,7 @@
     <div data-content="home">
       <h1 class="lang" 
           data-en="Welcome to our wedding!" 
-          data-pt="Bem-vindo ao nosso casamento!" 
+          data-pt="Bem-vindos ao nosso casamento!" 
           data-de="Willkommen zu unserer Hochzeit!">
         Welcome to our wedding!
         <span style="font-size:1.2em; margin-left:10px;">
@@ -334,7 +344,7 @@
         </span>
       </h1>
       <p class="lang" data-en="We are so happy to celebrate with you in Elvas, Portugal. Here you will find all the information you need for our special day." 
-         data-pt="Estamos muito felizes por celebrar convosco em Elvas, Portugal. Aqui encontrará toda a informação necessária para o nosso dia especial."
+         data-pt="Bem-vindos à página onde poderão encontrar todas as informações para o nosso casamento. Estamos muito felizes por fazerem parte deste dia e celebrarem este momento especial connosco."
          data-de="Wir freuen uns sehr, mit euch in Elvas, Portugal zu feiern. Hier findet ihr alle Informationen für unseren besonderen Tag.">
          We are so happy to celebrate with you in Elvas, Portugal. Here you will find all the information you need for our special day.
       </p>
@@ -356,24 +366,104 @@
           data-pt="Local:" 
           data-de="Ort:">Location:</strong>
         <span class="lang" 
-          data-en="Elvas, Portugal" 
-          data-pt="Elvas, Portugal" 
-          data-de="Elvas, Portugal">Elvas, Portugal</span>
+          data-en="Quinta da Pureza, Elvas, Portugal" 
+          data-pt="Quinta da Pureza, Elvas, Portugal" 
+          data-de="Quinta da Pureza, Elvas, Portugal">Elvas, Portugal</span>
       </div>
 
-      <!-- Google Maps widget for the new location -->
-      <div style="margin-top:20px;">
+
+    </div>
+    
+    <!-- Informations page content -->
+    <div data-content="informations" style="display:none;">
+      <h1 class="lang"
+         data-en="Informations"
+         data-pt="Informações"
+         data-de="Informationen">
+        Informations
+      </h1>
+      
+      <!-- How to get to the wedding venue -->
+      <h2 class="lang"
+         data-en="How to get to the wedding venue:"
+         data-pt="Como chegar ao local do casamento:"
+         data-de="Anreise zum Hochzeitsort:">
+        How to get to the wedding venue:
+      </h2>
+      
+      <!-- Google Maps widget -->
+      <div style="margin-top:20px; text-align:center;">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.6887768597426!2d-7.2060975!3d38.8853618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd171ba3f8ec8e55%3A0x20fb7823b6123ec3!2sQuinta%20do%20Pomarinho%2C%20Elvas%2C%20Portugal!5e0!3m2!1sen!2spt!4v1716220000000!5m2!1sen!2spt"
-          width="350" height="350" style="border:0; border-radius:10px; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          width="350" height="350" style="border:0; border-radius:10px; display:inline-block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
+      
+      <!-- Babysitter service -->
+      <h2 class="lang"
+         data-en="Babysitter service:"
+         data-pt="Serviço de babysitter:"
+         data-de="Babysitter-Service:">
+        Babysitter service:
+      </h2>
+      <p class="lang"
+         data-en="All kids of all ages are welcome at the wedding. Despite that, if you have the possibility and flexibility, we do recommend to leave the kids with the grandparents or another trusted guardian, so that you can be more at ease at the party (and stay until later ;) ), but we know that that is not always a possibility. If you bring the kids let us know and let us know if you would be interested in us arranging a babysitting service for the party, so that they (and you) can all have fun."
+         data-pt="Todas as crianças de todas as idades são bem-vindas no casamento. Mesmo sabendo que nem sempre é possível, se tiverem a possibilidade e flexibilidade, recomendamos que as deixem com os avós ou outro responsável de confiança, para que possam desfrutar desta festa sem preocupações e estar mais à vontade (e ficarem até mais tarde ;) ). Trazendo os vossos pequenos, queremos que todos se divirtam, e por isso, pensámos em organizar um serviço de babysitting. Indiquem no formulário se estariam interessados. "
+         data-de="Alle Kinder jeden Alters sind bei der Hochzeit willkommen. Dennoch empfehlen wir, wenn Sie die Möglichkeit und Flexibilität haben, die Kinder bei den Großeltern oder einem anderen vertrauenswürdigen Betreuer zu lassen, damit Sie entspannter bei der Party sein können (und länger bleiben können ;) ), aber wir wissen, dass das nicht immer möglich ist. Wenn Sie die Kinder mitbringen, lassen Sie es uns wissen und teilen Sie uns mit, ob Sie interessiert wären, dass wir einen Babysitter-Service für die Party organisieren, damit sie (und Sie) alle Spaß haben können.">
+        All kids of all ages are welcome at the wedding. Despite that, if you have the possibility and flexibility, we do recommend to leave the kids with the grandparents or another trusted guardian, so that you can be more at ease at the party (and stay until later ;) ), but we know that that is not always a possibility. If you bring the kids let us know and let us know if you would be interested in us arranging a babysitting service for the party, so that they (and you) can all have fun.
+      </p>
+      
+      <!-- Vacationing in portugal -->
+      <h2 class="lang"
+         data-en="Vacationing in Portugal:"
+         data-pt="Férias em Portugal:"
+         data-de="Urlaub in Portugal:">
+        Vacationing in Portugal:
+      </h2>
+      <p class="lang"
+         data-en="This is mostly for our international friends but can also apply for our Portuguese ones (&quot;Vá para fora cá dentro&quot; and all of that). If you plan to do vacation somewhere in Portugal, feel free to ask us for suggestions. We both love the Alentejo region and think Costa Vicentina is one of the best spots but depending on what you want to do, we can give more specific suggestions."
+         data-pt="Esta informação é principalmente para os nossos amigos internacionais, mas também se pode aplicar aos nossos amigos portugueses (&quot;Vá para fora cá dentro&quot; e tudo isso). Se planeiam fazer férias algures em Portugal, sintam-se à vontade para nos pedir sugestões. Ambos adoramos a região do Alentejo e achamos que a Costa Vicentina é uma óptima opção, mas dependendo do que querem fazer, podemos sugerir-vos algo mais específico."
+         data-de="Dies richtet sich hauptsächlich an unsere internationalen Freunde, kann aber auch für unsere portugiesischen gelten. Wenn Sie planen, irgendwo in Portugal Urlaub zu machen, zögern Sie nicht, uns nach Vorschlägen zu fragen. Wir beide lieben die Region Alentejo und denken, dass die Costa Vicentina einer der besten Orte ist, aber je nachdem, was Sie unternehmen möchten, können wir spezifischere Vorschläge machen.">
+        This is mostly for our international friends but can also apply for our Portuguese ones ("Vá para fora cá dentro" and all of that). If you plan to do vacation somewhere in Portugal, feel free to ask us for suggestions. We both love the Alentejo region and think Costa Vicentina is one of the best spots but depending on what you want to do, we can give more specific suggestions.
+      </p>
+      
+      <!-- Activities during the wedding party -->
+      <h2 class="lang"
+         data-en="Activities during the wedding party:"
+         data-pt="Actividades durante a festa de casamento:"
+         data-de="Aktivitäten während der Hochzeitsfeier:">
+        Activities during the wedding party:
+      </h2>
+      <p class="lang"
+         data-en="If you want you can organize an activity or surprise to happen during the party. Because of the surprise part, we can not help you with it but the Groom's Best Woman will do her best to help your crazy idea come to fruition. Just mark it as yes in the wedding confirmation form and she will get in touch with you. As 150 different activities are not possible, if you want to do one, we would suggest doing so as a group."
+         data-pt="Se quiserem, podem organizar uma actividade ou surpresa para acontecer durante a festa. Devido à parte da surpresa, não podemos ajudar-vos com isso, mas a Madrinha do Noivo fará o seu melhor para ajudar a vossa ideia maluca a tornar-se realidade. Marquem apenas como sim no formulário de confirmação do casamento e ela entrará em contacto convosco. Como 150 actividades diferentes não são possíveis, se quiserem fazer uma, sugerimos que o façam em grupo."
+         data-de="Wenn Sie möchten, können Sie eine Aktivität oder Überraschung während der Party organisieren. Aufgrund des Überraschungsteils können wir Ihnen dabei nicht helfen, aber die Trauzeugin des Bräutigams wird ihr Bestes geben, um Ihre verrückte Idee zum Leben zu erwecken. Markieren Sie es einfach als ja im Hochzeitsbestätigungsformular und sie wird sich mit Ihnen in Verbindung setzen. Da 150 verschiedene Aktivitäten nicht möglich sind, würden wir vorschlagen, dies als Gruppe zu tun, wenn Sie eine möchten.">
+        If you want you can organize an activity or surprise to happen during the party. Because of the surprise part, we can not help you with it but the Groom's Best Woman will do her best to help your crazy idea come to fruition. Just mark it as yes in the wedding confirmation form and she will get in touch with you. As 150 different activities are not possible, if you want to do one, we would suggest doing so as a group.
+      </p>
+      
+      <!-- Emergency contacts -->
+      <h2 class="lang"
+         data-en="Emergency contacts:"
+         data-pt="Contactos de emergência:"
+         data-de="Notfallkontakte:">
+        Emergency contacts:
+      </h2>
+      <p>
+        <span class="lang"
+         data-en="For our foreign friends the Portuguese general emergency contact is 112. For specific numbers from Elvas you can find them here - "
+         data-pt="Para os nossos amigos estrangeiros, o contacto geral de emergência português é o 112. Para números específicos de Elvas podem encontrá-los aqui - "
+         data-de="Für unsere ausländischen Freunde ist die portugiesische allgemeine Notfallnummer 112. Für spezifische Nummern aus Elvas finden Sie diese hier - ">
+        For our foreign friends the Portuguese general emergency contact is 112. For specific numbers from Elvas you can find them here - 
+        </span>
+        <a href="https://cm-elvas.pt/contactos/" target="_blank" style="color: #3A6604; font-weight: bold;">https://cm-elvas.pt/contactos/</a>
+      </p>
     </div>
+    
     <!-- RSVP page content -->
     <div data-content="form" style="display:none;">
       <h1 class="lang" data-en="RSVP" data-pt="Confirmação de presença" data-de="Anmeldung">RSVP</h1>
       <p class="lang" data-en="Please fill out the form below to let us know if you can join us!" 
-         data-pt="Por favor, preencha o formulário abaixo para nos informar se pode estar presente!"
+         data-pt="Por favor, preencham o formulário abaixo para nos informar se podem estar presentes!"
          data-de="Bitte füllt das untenstehende Formular aus, damit wir wissen, ob ihr dabei seid!">
          Please fill out the form below to let us know if you can join us!
       </p>
@@ -393,22 +483,22 @@
           data-pt="Airbnbs" 
           data-de="Airbnbs">Airbnbs</h2>
       <ul>
-        <li><a href="https://www.airbnb.pt/rooms/52482244" target="_blank">Elvas the Queen Residence</a> (2 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/1359714170217911999" target="_blank">Apartment</a> (2 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/10196297" target="_blank">Apartment</a> (2 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/1489209034787998203" target="_blank">Apartment in the city center</a> (2 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/614332882527550684" target="_blank">Apartment outside the city</a> (2 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/36672375" target="_blank">Monte da Graca Property</a> (4 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/26491702" target="_blank">Apartment in the city center</a> (4 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/53407741" target="_blank">Apartment near the castle</a> (4 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/26944712" target="_blank">Apartment in the city center</a> (4 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/27982196" target="_blank">Chale Chafariz del Rei</a> (5 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/1413026728680815790" target="_blank">Casa da Edda Apartment</a> (6 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/18021406" target="_blank">Casa de fazenda</a> (6 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/26941817" target="_blank">Apartment in the city center</a> (6 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/5872521" target="_blank">Apartment in the city</a> (6 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/1211539339049518365" target="_blank">Big house in the outskirts of the city</a> (8 pax)</li>
-        <li><a href="https://www.airbnb.pt/rooms/1374133424214593731" target="_blank">Big House in the outskirts of the city</a> (12 pax)</li>
+        <li>2p. - <a href="https://www.airbnb.pt/rooms/52482244" target="_blank">Elvas the Queen Residence</a></li>
+        <li>2p. - <a href="https://www.airbnb.pt/rooms/1359714170217911999" target="_blank">Apartment</a></li>
+        <li>2p. - <a href="https://www.airbnb.pt/rooms/10196297" target="_blank">Apartment</a></li>
+        <li>2p. - <a href="https://www.airbnb.pt/rooms/1489209034787998203" target="_blank">Apartment in the city center</a></li>
+        <li>2p. - <a href="https://www.airbnb.pt/rooms/614332882527550684" target="_blank">Apartment outside the city</a></li>
+        <li>4p. - <a href="https://www.airbnb.pt/rooms/36672375" target="_blank">Monte da Graca Property</a></li>
+        <li>4p. - <a href="https://www.airbnb.pt/rooms/26491702" target="_blank">Apartment in the city center</a></li>
+        <li>4p. - <a href="https://www.airbnb.pt/rooms/53407741" target="_blank">Apartment near the castle</a></li>
+        <li>4p. - <a href="https://www.airbnb.pt/rooms/26944712" target="_blank">Apartment in the city center</a></li>
+        <li>5p. - <a href="https://www.airbnb.pt/rooms/27982196" target="_blank">Chale Chafariz del Rei</a></li>
+        <li>6p. - <a href="https://www.airbnb.pt/rooms/1413026728680815790" target="_blank">Casa da Edda Apartment</a></li>
+        <li>6p. - <a href="https://www.airbnb.pt/rooms/18021406" target="_blank">Casa de fazenda</a></li>
+        <li>6p. - <a href="https://www.airbnb.pt/rooms/26941817" target="_blank">Apartment in the city center</a></li>
+        <li>6p. - <a href="https://www.airbnb.pt/rooms/5872521" target="_blank">Apartment in the city</a></li>
+        <li>8p. - <a href="https://www.airbnb.pt/rooms/1211539339049518365" target="_blank">Big house in the outskirts of the city</a></li>
+        <li>12p. - <a href="https://www.airbnb.pt/rooms/1374133424214593731" target="_blank">Big House in the outskirts of the city</a></li>
       </ul>
 
       <!-- Hotels Section -->
@@ -438,169 +528,73 @@
           data-de="Was kann man tun?">
         What to do?
       </h1>
-      <p class="lang"
-         data-en="Discover activities and sights in and around Elvas to enjoy during your stay."
-         data-pt="Descubra atividades e pontos turísticos em Elvas e arredores para aproveitar durante a sua estadia."
-         data-de="Entdecken Sie Aktivitäten und Sehenswürdigkeiten in und um Elvas, die Sie während Ihres Aufenthalts genießen können.">
-        Discover activities and sights in and around Elvas to enjoy during your stay.
-      </p>
-      <div style="margin-top:20px; padding: 20px; background: rgba(52, 152, 219, 0.1); border-radius: 10px; border-left: 4px solid #3498db;">
-        <h3 style="margin-top: 0; color: #3498db;" class="lang" 
-            data-en="📺 Watch Videos About Elvas"
-            data-pt="📺 Veja Vídeos Sobre Elvas"
-            data-de="📺 Videos über Elvas ansehen">
-          📺 Watch Videos About Elvas
-        </h3>
-        <p class="lang" 
-           data-en="Discover the beauty of Elvas through videos! Search for these topics on YouTube:"
-           data-pt="Descubra a beleza de Elvas através de vídeos! Procure estes tópicos no YouTube:"
-           data-de="Entdecken Sie die Schönheit von Elvas durch Videos! Suchen Sie nach diesen Themen auf YouTube:">
-          Discover the beauty of Elvas through videos! Search for these topics on YouTube:
-        </p>
-        <ul style="margin: 10px 0;">
-          <li class="lang" data-en="🏰 'Elvas UNESCO World Heritage'" data-pt="🏰 'Elvas Património Mundial UNESCO'" data-de="🏰 'Elvas UNESCO-Welterbe'">🏰 'Elvas UNESCO World Heritage'</li>
-          <li class="lang" data-en="� 'Elvas Portugal Drone'" data-pt="🚁 'Elvas Portugal Drone'" data-de="🚁 'Elvas Portugal Drohne'">🚁 'Elvas Portugal Drone'</li>
-          <li class="lang" data-en="🏛️ 'Elvas Fortifications'" data-pt="🏛️ 'Fortificações de Elvas'" data-de="🏛️ 'Elvas Befestigungsanlagen'">🏛️ 'Elvas Fortifications'</li>
-        </ul>
-        <p>
-          <a href="https://www.youtube.com/results?search_query=Elvas+Portugal+UNESCO" target="_blank" style="color: #3498db; text-decoration: none; font-weight: bold;" class="lang"
-             data-en="🔗 Search YouTube for Elvas Videos"
-             data-pt="🔗 Procurar Vídeos de Elvas no YouTube"
-             data-de="🔗 YouTube nach Elvas-Videos durchsuchen">
-            🔗 Search YouTube for Elvas Videos
-          </a>
-        </p>
-      </div>
-
-      <h2 class="lang" data-en="🏰 In Elvas" data-pt="🏰 Em Elvas" data-de="🏰 In Elvas">🏰 In Elvas</h2>
       
-      <h3 class="lang" data-en="🌟 Elvas Historic Center (UNESCO World Heritage)" data-pt="🌟 Centro Histórico de Elvas (Património Mundial UNESCO)" data-de="🌟 Historisches Zentrum von Elvas (UNESCO-Welterbe)">🌟 Elvas Historic Center (UNESCO World Heritage)</h3>
       <p class="lang"
-         data-en="Explore the largest bulwarked fortification system in the world. Walk through the star-shaped fortress, visit the Amoreira Aqueduct, and discover the Nossa Senhora da Assunção Church."
-         data-pt="Explore o maior sistema de fortificação abaluartada do mundo. Caminhe pela fortaleza em forma de estrela, visite o Aqueduto da Amoreira e descubra a Igreja de Nossa Senhora da Assunção."
-         data-de="Erkunden Sie das größte Bastionsbefestigungssystem der Welt. Spazieren Sie durch die sternförmige Festung, besuchen Sie das Amoreira-Aquädukt und entdecken Sie die Kirche Nossa Senhora da Assunção.">
-        Explore the largest bulwarked fortification system in the world. Walk through the star-shaped fortress, visit the Amoreira Aqueduct, and discover the Nossa Senhora da Assunção Church.
+         data-en="If your stay in Alentejo extends and becomes your vacation destination, you will have countless things to explore in the city and region. There are diverse historical and natural activities to enjoy."
+         data-pt="Se a vossa estadia no Alentejo se prolongar, e for o vosso destino de férias, terão imensas coisas que explorar na cidade e na região. Existem diversas actividades históricas, naturais para aproveitar."
+         data-de="Wenn sich Ihr Aufenthalt im Alentejo verlängert und es Ihr Urlaubsziel wird, haben Sie unzählige Dinge zu erkunden in der Stadt und Region. Es gibt vielfältige historische und natürliche Aktivitäten zu genießen.">
+        If your stay in Alentejo extends and becomes your vacation destination, you will have countless things to explore in the city and region. There are diverse historical and natural activities to enjoy.
+      </p>
+      
+      <p class="lang"
+         data-en="We leave you some recommendations of places and things to do during your stay."
+         data-pt="Deixamos-vos algumas recomendações de locais e coisas para fazer durante a vossa estadia."
+         data-de="Wir hinterlassen Ihnen einige Empfehlungen für Orte und Aktivitäten während Ihres Aufenthalts.">
+        We leave you some recommendations of places and things to do during your stay.
       </p>
 
-      <h3 class="lang" data-en="🏛️ Fort of Santa Luzia" data-pt="🏛️ Forte de Santa Luzia" data-de="🏛️ Fort Santa Luzia">🏛️ Fort of Santa Luzia</h3>
+      <h2 class="lang"
+         data-en="Places to Visit"
+         data-pt="Locais para Visitar"
+         data-de="Sehenswürdigkeiten">
+        Places to Visit
+      </h2>
+      
+      <h3><a href="https://www.vagamundos.pt/o-que-visitar-em-elvas/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;">Elvas</a></h3>
+      <h3><a href="https://www.spain.info/pt_BR/destino/badajoz/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;">Badajoz</a></h3>
+      <h3><a href="https://www.visitportugal.com/pt-pt/destinos/alentejo/73787" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;">Évora</a></h3>
+      <h3><a href="https://www.visitportugal.com/pt-pt/content/monsaraz" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;">Reguengos de Monsaraz</a></h3>
+      <h3><a href="https://www.vagamundos.pt/visitar-vila-vicosa-o-que-ver-e-fazer/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;">Vila Viçosa</a></h3>
+      <h3><a href="https://www.cm-marvao.pt/turismo/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;">Marvão</a></h3>
+
+      <h2 class="lang"
+         data-en="Recommended Activities"
+         data-pt="Actividades Recomendadas"
+         data-de="Empfohlene Aktivitäten">
+        Recommended Activities
+      </h2>
+      
       <p class="lang"
-         data-en="Visit this 17th-century military museum with impressive views over Elvas and the Spanish border. Perfect for history enthusiasts!"
-         data-pt="Visite este museu militar do século XVII com vistas impressionantes sobre Elvas e a fronteira espanhola. Perfeito para os entusiastas da história!"
-         data-de="Besuchen Sie dieses Militärmuseum aus dem 17. Jahrhundert mit beeindruckenden Aussichten über Elvas und die spanische Grenze. Perfekt für Geschichtsbegeisterte!">
-        Visit this 17th-century military museum with impressive views over Elvas and the Spanish border. Perfect for history enthusiasts!
+         data-en="In addition to some tourist spots to visit, we leave you some activity recommendations:"
+         data-pt="Para além de alguns pontos mais turísticos a visitar, deixamos-vos algumas recomendações de actividades:"
+         data-de="Zusätzlich zu einigen touristischen Sehenswürdigkeiten hinterlassen wir Ihnen einige Aktivitätsempfehlungen:">
+        In addition to some tourist spots to visit, we leave you some activity recommendations:
       </p>
 
-      <h3 class="lang" data-en="🌳 Municipal Garden and República Square" data-pt="🌳 Jardim Municipal e Praça da República" data-de="🌳 Stadtgarten und Praça da República">🌳 Municipal Garden and República Square</h3>
-      <p class="lang"
-         data-en="Relax in the beautiful municipal garden and enjoy a coffee in the charming main square surrounded by traditional Portuguese architecture."
-         data-pt="Relaxe no belo jardim municipal e desfrute de um café na encantadora praça principal rodeada pela arquitetura tradicional portuguesa."
-         data-de="Entspannen Sie sich im schönen Stadtgarten und genießen Sie einen Kaffee auf dem charmanten Hauptplatz, umgeben von traditioneller portugiesischer Architektur.">
-        Relax in the beautiful municipal garden and enjoy a coffee in the charming main square surrounded by traditional Portuguese architecture.
-      </p>
-
-      <h2 class="lang" data-en="🚗 Around Elvas (30-60km)" data-pt="🚗 Arredores de Elvas (30-60km)" data-de="🚗 Rund um Elvas (30-60km)">🚗 Around Elvas (30-60km)</h2>
-
-      <h3 class="lang" data-en="🚂 Rail Bike Marvão (40km)" data-pt="🚂 Rail Bike Marvão (40km)" data-de="🚂 Rail Bike Marvão (40km)">🚂 Rail Bike Marvão (40km)</h3>
-      <p class="lang"
-         data-en="Experience a unique adventure cycling on old railway tracks through the beautiful Alentejo countryside. A fun and eco-friendly way to explore the region with stunning mountain views."
-         data-pt="Experiencie uma aventura única pedalando nos antigos trilhos ferroviários através da bela paisagem alentejana. Uma forma divertida e ecológica de explorar a região com vistas deslumbrantes da serra."
-         data-de="Erleben Sie ein einzigartiges Abenteuer beim Radfahren auf alten Bahngleisen durch die wunderschöne Alentejo-Landschaft. Eine lustige und umweltfreundliche Art, die Region mit atemberaubenden Bergblicken zu erkunden.">
-        Experience a unique adventure cycling on old railway tracks through the beautiful Alentejo countryside. A fun and eco-friendly way to explore the region with stunning mountain views.
-      </p>
-      <p><a href="https://www.railbikemarvao.com/" target="_blank" class="lang" data-en="🔗 Book Rail Bike Experience" data-pt="🔗 Reserve Experiência Rail Bike" data-de="🔗 Rail Bike Erlebnis buchen">🔗 Book Rail Bike Experience</a></p>
-
-      <h3 class="lang" data-en="🌊 Caia Dam & Water Activities (20km)" data-pt="🌊 Albufeira do Caia e Atividades Aquáticas (20km)" data-de="🌊 Caia-Stausee & Wasseraktivitäten (20km)">🌊 Caia Dam & Water Activities (20km)</h3>
-      <p class="lang"
-         data-en="Enjoy water sports, fishing, and relaxation at this beautiful reservoir near Campo Maior. Perfect for swimming, kayaking, and picnicking with family and friends."
-         data-pt="Desfrute de desportos aquáticos, pesca e relaxamento nesta bela albufeira perto de Campo Maior. Perfeita para nadar, fazer caiaque e fazer piqueniques com família e amigos."
-         data-de="Genießen Sie Wassersport, Angeln und Entspannung an diesem schönen Stausee in der Nähe von Campo Maior. Perfekt zum Schwimmen, Kajakfahren und Picknicken mit Familie und Freunden.">
-        Enjoy water sports, fishing, and relaxation at this beautiful reservoir near Campo Maior. Perfect for swimming, kayaking, and picnicking with family and friends.
-      </p>
-      <p><a href="https://campomaior.pt/albufeira-do-caia/" target="_blank" class="lang" data-en="🔗 Discover Caia Dam" data-pt="🔗 Descubra a Albufeira do Caia" data-de="🔗 Entdecken Sie den Caia-Stausee">🔗 Discover Caia Dam</a></p>
-
-      <h3 class="lang" data-en="🏺 Estremoz (25km)" data-pt="🏺 Estremoz (25km)" data-de="🏺 Estremoz (25km)">🏺 Estremoz (25km)</h3>
-      <p class="lang"
-         data-en="Famous for its marble and pottery. Visit the medieval castle, explore the Saturday market, and admire the beautiful marble architecture throughout the town."
-         data-pt="Famosa pelo seu mármore e cerâmica. Visite o castelo medieval, explore o mercado de sábado e admire a bela arquitetura em mármore pela cidade."
-         data-de="Berühmt für seinen Marmor und die Töpferwaren. Besuchen Sie das mittelalterliche Schloss, erkunden Sie den Samstagsmarkt und bewundern Sie die schöne Marmorarchitektur in der ganzen Stadt.">
-        Famous for its marble and pottery. Visit the medieval castle, explore the Saturday market, and admire the beautiful marble architecture throughout the town.
-      </p>
-
-      <h3 class="lang" data-en="🍷 Vila Viçosa (40km)" data-pt="🍷 Vila Viçosa (40km)" data-de="🍷 Vila Viçosa (40km)">🍷 Vila Viçosa (40km)</h3>
-      <p class="lang"
-         data-en="The 'Princess of Alentejo' with its stunning Ducal Palace, marble streets, and excellent wine estates. Don't miss the Royal Palace and local wine tastings."
-         data-pt="A 'Princesa do Alentejo' com o seu deslumbrante Paço Ducal, ruas de mármore e excelentes quintas vinícolas. Não perca o Paço Real e as provas de vinhos locais."
-         data-de="Die 'Prinzessin des Alentejo' mit ihrem atemberaubenden Herzogspalast, Marmorstraßen und ausgezeichneten Weingütern. Verpassen Sie nicht den Königspalast und lokale Weinverkostungen.">
-        The 'Princess of Alentejo' with its stunning Ducal Palace, marble streets, and excellent wine estates. Don't miss the Royal Palace and local wine tastings.
-      </p>
-
-      <h3 class="lang" data-en="🍇 Adega Mayor Wine Tourism (35km)" data-pt="🍇 Enoturismo Adega Mayor (35km)" data-de="🍇 Adega Mayor Weintourismus (35km)">🍇 Adega Mayor Wine Tourism (35km)</h3>
-      <p class="lang"
-         data-en="Visit one of Alentejo's most prestigious wineries for guided tours, wine tastings, and stunning vineyard views. Experience the art of winemaking in this award-winning estate."
-         data-pt="Visite uma das adegas mais prestigiadas do Alentejo para visitas guiadas, provas de vinhos e vistas deslumbrantes dos vinhedos. Experiencie a arte da vinificação nesta propriedade premiada."
-         data-de="Besuchen Sie eines der prestigeträchtigsten Weingüter des Alentejo für geführte Touren, Weinverkostungen und atemberaubende Weinbergblicke. Erleben Sie die Kunst des Weinmachens auf diesem preisgekrönten Anwesen.">
-        Visit one of Alentejo's most prestigious wineries for guided tours, wine tastings, and stunning vineyard views. Experience the art of winemaking in this award-winning estate.
-      </p>
-      <p><a href="https://www.adegamayor.pt/pt/pt/enoturismo-alentejo?page=3" target="_blank" class="lang" data-en="🔗 Book Wine Tour at Adega Mayor" data-pt="🔗 Reserve Tour de Vinhos na Adega Mayor" data-de="🔗 Weintour bei Adega Mayor buchen">🔗 Book Wine Tour at Adega Mayor</a></p>
-
-      <h3 class="lang" data-en="☕ Coffee Science Center (30km)" data-pt="☕ Centro Ciência do Café (30km)" data-de="☕ Kaffee-Wissenschaftszentrum (30km)">☕ Coffee Science Center (30km)</h3>
-      <p class="lang"
-         data-en="Discover the fascinating world of coffee at this interactive science center. Learn about coffee cultivation, processing, and enjoy expertly brewed coffee while exploring the science behind your favorite drink."
-         data-pt="Descubra o fascinante mundo do café neste centro de ciência interativo. Aprenda sobre o cultivo, processamento do café e desfrute de café expertamente preparado enquanto explora a ciência por trás da sua bebida favorita."
-         data-de="Entdecken Sie die faszinierende Welt des Kaffees in diesem interaktiven Wissenschaftszentrum. Lernen Sie über Kaffeeanbau und -verarbeitung und genießen Sie fachmännisch gebrühten Kaffee, während Sie die Wissenschaft hinter Ihrem Lieblingsgetränk erkunden.">
-        Discover the fascinating world of coffee at this interactive science center. Learn about coffee cultivation, processing, and enjoy expertly brewed coffee while exploring the science behind your favorite drink.
-      </p>
-      <p><a href="https://www.centrocienciacafe.com/pt" target="_blank" class="lang" data-en="🔗 Visit Coffee Science Center" data-pt="🔗 Visite o Centro Ciência do Café" data-de="🔗 Besuchen Sie das Kaffee-Wissenschaftszentrum">🔗 Visit Coffee Science Center</a></p>
-
-      <h3 class="lang" data-en="⭐ Monsaraz (55km)" data-pt="⭐ Monsaraz (55km)" data-de="⭐ Monsaraz (55km)">⭐ Monsaraz (55km)</h3>
-      <p class="lang"
-         data-en="One of Portugal's most beautiful medieval villages, perched on a hilltop overlooking the Alqueva Lake. Perfect for sunset photography and romantic walks."
-         data-pt="Uma das mais belas aldeias medievais de Portugal, empoleirada numa colina com vista para o Lago Alqueva. Perfeita para fotografias do pôr do sol e caminhadas românticas."
-         data-de="Eines der schönsten mittelalterlichen Dörfer Portugals, auf einem Hügel mit Blick auf den Alqueva-See gelegen. Perfekt für Sonnenuntergangsfotografie und romantische Spaziergänge.">
-        One of Portugal's most beautiful medieval villages, perched on a hilltop overlooking the Alqueva Lake. Perfect for sunset photography and romantic walks.
-      </p>
-
-      <h3 class="lang" data-en="🌊 Alqueva Lake & Dark Sky Reserve (50km)" data-pt="🌊 Lago Alqueva e Reserva Dark Sky (50km)" data-de="🌊 Alqueva-See & Dark Sky Reserve (50km)">🌊 Alqueva Lake & Dark Sky Reserve (50km)</h3>
-      <p class="lang"
-         data-en="Europe's largest artificial lake offers water sports, boat trips, and the world's first Dark Sky Reserve for incredible stargazing experiences."
-         data-pt="O maior lago artificial da Europa oferece desportos aquáticos, passeios de barco e a primeira Reserva Dark Sky do mundo para experiências incríveis de observação das estrelas."
-         data-de="Europas größter Stausee bietet Wassersport, Bootsfahrten und das weltweit erste Dark Sky Reserve für unglaubliche Sternenbeobachtungserlebnisse.">
-        Europe's largest artificial lake offers water sports, boat trips, and the world's first Dark Sky Reserve for incredible stargazing experiences.
-      </p>
-
-      <h3 class="lang" data-en="�️ Colonel António Cachola Collection (45km)" data-pt="🏛️ Coleção Coronel António Cachola (45km)" data-de="🏛️ Sammlung Oberst António Cachola (45km)">🏛️ Colonel António Cachola Collection (45km)</h3>
-      <p class="lang"
-         data-en="Explore this fascinating private collection featuring military artifacts, vintage vehicles, and historical memorabilia. A unique museum experience showcasing Portuguese military heritage and history."
-         data-pt="Explore esta fascinante coleção privada com artefactos militares, veículos vintage e memorabilia histórica. Uma experiência museológica única que mostra o património militar português e a história."
-         data-de="Erkunden Sie diese faszinierende Privatsammlung mit militärischen Artefakten, Oldtimern und historischen Erinnerungsstücken. Ein einzigartiges Museumserlebnis, das das portugiesische Militärerbe und die Geschichte zeigt.">
-        Explore this fascinating private collection featuring military artifacts, vintage vehicles, and historical memorabilia. A unique museum experience showcasing Portuguese military heritage and history.
-      </p>
-      <p><a href="https://col-antoniocachola.com/?lang=en" target="_blank" class="lang" data-en="🔗 Visit Cachola Collection" data-pt="🔗 Visite a Coleção Cachola" data-de="🔗 Besuchen Sie die Cachola-Sammlung">🔗 Visit Cachola Collection</a></p>
-
-      <h3 class="lang" data-en="🏊 River Beaches of Alentejo" data-pt="🏊 Praias Fluviais do Alentejo" data-de="🏊 Flussbadestrände des Alentejo">🏊 River Beaches of Alentejo</h3>
-      <p class="lang"
-         data-en="Cool off at some of Alentejo's best river beaches! Discover hidden gems with crystal-clear freshwater, perfect for swimming and relaxing away from the summer heat."
-         data-pt="Refresque-se nas melhores praias fluviais do Alentejo! Descubra pérolas escondidas com água doce cristalina, perfeitas para nadar e relaxar longe do calor do verão."
-         data-de="Kühlen Sie sich an einigen der besten Flussbadestrände des Alentejo ab! Entdecken Sie versteckte Juwelen mit kristallklarem Süßwasser, perfekt zum Schwimmen und Entspannen fernab der Sommerhitze.">
-        Cool off at some of Alentejo's best river beaches! Discover hidden gems with crystal-clear freshwater, perfect for swimming and relaxing away from the summer heat.
-      </p>
-      <p><a href="https://www.vagamundos.pt/melhores-praias-fluviais-alentejo/" target="_blank" class="lang" data-en="🔗 Discover River Beaches Guide" data-pt="🔗 Descubra o Guia de Praias Fluviais" data-de="🔗 Entdecken Sie den Flussbadestrand-Führer">🔗 Discover River Beaches Guide</a></p>
-
-      <h3 class="lang" data-en="�🇪🇸 Badajoz, Spain (25km)" data-pt="🇪🇸 Badajoz, Espanha (25km)" data-de="🇪🇸 Badajoz, Spanien (25km)">🇪🇸 Badajoz, Spain (25km)</h3>
-      <p class="lang"
-         data-en="Cross the border for Spanish culture! Visit the Alcazaba fortress, explore the old town, enjoy tapas, and experience the vibrant Spanish nightlife."
-         data-pt="Atravesse a fronteira para a cultura espanhola! Visite a fortaleza da Alcaçaba, explore a cidade velha, desfrute de tapas e experiencie a vibrante vida noturna espanhola."
-         data-de="Überqueren Sie die Grenze für spanische Kultur! Besuchen Sie die Alcazaba-Festung, erkunden Sie die Altstadt, genießen Sie Tapas und erleben Sie das lebendige spanische Nachtleben.">
-        Cross the border for Spanish culture! Visit the Alcazaba fortress, explore the old town, enjoy tapas, and experience the vibrant Spanish nightlife.
-      </p>
-
-      <h2 class="lang" data-en="🎯 Activity Tips" data-pt="🎯 Dicas de Atividades" data-de="🎯 Aktivitätstipps">🎯 Activity Tips</h2>
-      <ul>
-        <li class="lang" data-en="🚗 Rent a car to explore the region comfortably" data-pt="🚗 Alugue um carro para explorar a região confortavelmente" data-de="🚗 Mieten Sie ein Auto, um die Region bequem zu erkunden">🚗 Rent a car to explore the region comfortably</li>
-        <li class="lang" data-en="📱 Download offline maps as mobile signal can be weak in rural areas" data-pt="📱 Descarregue mapas offline pois o sinal móvel pode ser fraco em áreas rurais" data-de="📱 Laden Sie Offline-Karten herunter, da das Mobilsignal in ländlichen Gebieten schwach sein kann">📱 Download offline maps as mobile signal can be weak in rural areas</li>
-        <li class="lang" data-en="🌅 Early morning or late afternoon visits offer the best light and fewer crowds" data-pt="🌅 Visitas de manhã cedo ou ao final da tarde oferecem a melhor luz e menos multidões" data-de="🌅 Besuche am frühen Morgen oder späten Nachmittag bieten das beste Licht und weniger Menschenmassen">🌅 Early morning or late afternoon visits offer the best light and fewer crowds</li>
-        <li class="lang" data-en="💧 Bring water and sun protection - Alentejo can get very hot!" data-pt="💧 Traga água e proteção solar - o Alentejo pode ficar muito quente!" data-de="💧 Bringen Sie Wasser und Sonnenschutz mit - das Alentejo kann sehr heiß werden!">💧 Bring water and sun protection - Alentejo can get very hot!</li>
-      </ul>
+      <h3><a href="https://www.railbikemarvao.com/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;" class="lang"
+         data-en="Cycling on Marvão railway tracks"
+         data-pt="Pedalar nos carris da linha de ferro de Marvão"
+         data-de="Radfahren auf den Eisenbahnschienen von Marvão">Cycling on Marvão railway tracks</a></h3>
+      <h3><a href="https://campomaior.pt/albufeira-do-caia/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;" class="lang"
+         data-en="Water activities for hot days"
+         data-pt="Actividades aquáticas para os dias de calor"
+         data-de="Wasseraktivitäten für heiße Tage">Water activities for hot days</a></h3>
+      <h3><a href="https://www.vagamundos.pt/melhores-praias-fluviais-alentejo/" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;" class="lang"
+         data-en="River beaches in the area"
+         data-pt="Praias fluviais da zona"
+         data-de="Flussstränder in der Gegend">River beaches in the area</a></h3>
+      <h3><a href="https://www.alentejo-ribatejo-outdoor.com/pt/tours/#area=801681296&cat=Caminhada-main,Caminhada,Caminhada%20de%20Longa%20Dist%C3%A2ncia,Caminhada%20de%20Peregrina%C3%A7%C3%A3o,Caminhada%20Tem%C3%A1tica&filter=r-fullyTranslatedLangus-pt,r-openState-,sb-sortedBy-0&ov=alerts,slope&view=map&wt=Alto%20Alentejo&zc=9.,-7.64786,39.20885" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;" class="lang"
+         data-en="For hiking enthusiasts"
+         data-pt="Para os amantes de caminhadas"
+         data-de="Für Wanderliebhaber">For hiking enthusiasts</a></h3>
+      <h3><a href="https://www.adegamayor.pt/pt/pt/enoturismo-alentejo?page=3" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;" class="lang"
+         data-en="Wine tasting"
+         data-pt="Prova de vinhos"
+         data-de="Weinverkostung">Wine tasting</a></h3>
+      <h3><a href="https://www.centrocienciacafe.com/pt" target="_blank" style="color: #3A6604; font-weight: bold; text-decoration: none;" class="lang"
+         data-en="For coffee curious"
+         data-pt="Para os curiosos do café"
+         data-de="Für Kaffee-Neugierige">For coffee curious</a></h3>
     </div>
 
     <!-- Where and What to eat? section -->
@@ -611,13 +605,68 @@
           data-de="Wo und was essen?">
         Where and What to eat?
       </h1>
+
+      
       <p class="lang"
-         data-en="Find our favorite restaurants and local dishes to try in Elvas."
-         data-pt="Veja os nossos restaurantes favoritos e pratos típicos para experimentar em Elvas."
-         data-de="Entdecken Sie unsere Lieblingsrestaurants und lokale Gerichte in Elvas.">
-        Find our favorite restaurants and local dishes to try in Elvas.
+         data-en="One of the wonders of Alentejo and Elvas is the gastronomy."
+         data-pt="Uma das maravilhas do Alentejo e de Elvas, é a gastronomia."
+         data-de="Eine der Wunder des Alentejo und von Elvas ist die Gastronomie.">
+        One of the wonders of Alentejo and Elvas is the gastronomy.
       </p>
-      <!-- Add your food recommendations here -->
+      
+      <p class="lang"
+         data-en="Among the countless wonders you can taste, don't miss trying Açorda Alentejana, Migas com Entrecosto, Sopa de Tomate, among others."
+         data-pt="Entre as inúmeras maravilhas que podem provar, não passem sem experimentar a Açorda Alentejana, Migas com Entrecosto, Sopa de Tomate, entre outras."
+         data-de="Unter den unzähligen Wundern, die Sie probieren können, sollten Sie nicht versäumen, Açorda Alentejana, Migas com Entrecosto, Sopa de Tomate und andere zu probieren.">
+        Among the countless wonders you can taste, don't miss trying Açorda Alentejana, Migas com Entrecosto, Sopa de Tomate, among others.
+      </p>
+      
+      <p class="lang"
+         data-en="Elvas has a good selection of restaurants, not all are listed here. These will be some of the most traditional ones. And if you want an immersive experience in Alentejo cuisine, don't miss trying to eat at one of the first 3."
+         data-pt="Elvas tem uma boa oferta de restaurantes, não estão todos aqui. Estes serão alguns dos mais tradicionais. E se quiserem uma experiência imersiva na cozinha alentejana, não deixem de tentar comer num dos primeiros 3."
+         data-de="Elvas hat eine gute Auswahl an Restaurants, nicht alle sind hier aufgeführt. Dies werden einige der traditionellsten sein. Und wenn Sie eine immersive Erfahrung in der Alentejo-Küche wollen, verpassen Sie es nicht, in einem der ersten 3 zu essen.">
+        Elvas has a good selection of restaurants, not all are listed here. These will be some of the most traditional ones. And if you want an immersive experience in Alentejo cuisine, don't miss trying to eat at one of the first 3.
+      </p>
+      
+      <div style="margin: 20px 0;">
+        <a href="https://www.youtube.com/watch?v=dLjCzxhjatU" target="_blank" style="font-size:1.2em; color:#3A6604;" class="lang"
+           data-en="📺 Watch Traditional Food Video on YouTube"
+           data-pt="📺 Ver Vídeo sobre Comida Tradicional no YouTube"
+           data-de="📺 Traditionelles Essen Video auf YouTube ansehen">
+          📺 Watch Traditional Food Video on YouTube
+        </a>
+      </div>
+
+      <h2 class="lang"
+          data-en="Recommended Restaurants"
+          data-pt="Restaurantes Recomendados"
+          data-de="Empfohlene Restaurants">
+        Recommended Restaurants
+      </h2>
+      
+      <p class="lang"
+         data-en="(Click on the restaurant name to open TripAdvisor page)"
+         data-pt="(Carreguem no nome do restaurante para abrir a página do TripAdvisor)"
+         data-de="(Klicken Sie auf den Restaurantnamen, um die TripAdvisor-Seite zu öffnen)">
+        (Click on the restaurant name to open TripAdvisor page)
+      </p>
+      
+      <ul>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d1648093-Reviews-Taberna_do_Adro-Elvas_Portalegre_District_Alentejo.html" target="_blank">Taberna do Adro</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d3585365-Reviews-Adega_Regional-Elvas_Portalegre_District_Alentejo.html" target="_blank">Adega Regional</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d2401385-Reviews-Pompilio-Elvas_Portalegre_District_Alentejo.html" target="_blank">O Pompílio</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d5981366-Reviews-Tif_Taf-Elvas_Portalegre_District_Alentejo.html" target="_blank">Tif Taf</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d4413117-Reviews-Marisqueira_A_Lusitania-Elvas_Portalegre_District_Alentejo.html" target="_blank">Lusitânia</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d7708401-Reviews-Varchotel-Elvas_Portalegre_District_Alentejo.html" target="_blank">Varchotel</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d9747427-Reviews-Acontece_Restaurante-Elvas_Portalegre_District_Alentejo.html" target="_blank">Acontece</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d3573230-Reviews-A_Coluna-Elvas_Portalegre_District_Alentejo.html" target="_blank">A Coluna</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d3359876-Reviews-O_Lagar-Elvas_Portalegre_District_Alentejo.html" target="_blank">O Lagar</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d26842561-Reviews-Alcala_Restaurant_Sky_Lounge-Elvas_Portalegre_District_Alentejo.html" target="_blank">Alcalá</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d12267724-Reviews-Recanto_de_Sao_Paulo-Elvas_Portalegre_District_Alentejo.html#REVIEWS" target="_blank">Recanto de São Paulo</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d15639986-Reviews-Mau_Maria_Petiscaria-Elvas_Portalegre_District_Alentejo.html" target="_blank">Mau Maria</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d28026319-Reviews-Nonna_Bia-Elvas_Portalegre_District_Alentejo.html" target="_blank">Nonna Bia</a></li>
+        <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189104-d2019327-Reviews-Restaurante_El_Cristo-Elvas_Portalegre_District_Alentejo.html" target="_blank">El Cristo</a></li>
+      </ul>
     </div>
 
     <!-- Babysitter section -->
@@ -630,7 +679,7 @@
       </h1>
       <p class="lang"
          data-en="Need help with childcare during the wedding? Here are some babysitter options."
-         data-pt="Precisa de ajuda com crianças durante o casamento? Veja algumas opções de babá."
+         data-pt="Precisam de ajuda com crianças durante o casamento? Vejam algumas opções de babysitter."
          data-de="Brauchen Sie Hilfe mit der Kinderbetreuung während der Hochzeit? Hier sind einige Babysitter-Optionen.">
         Need help with childcare during the wedding? Here are some babysitter options.
       </p>
@@ -639,12 +688,46 @@
     <!-- Gift page content (third to last) -->
     <div data-content="gift" style="display:none;">
       <h1 class="lang" data-en="Wedding Gift" data-pt="Presente de Casamento" data-de="Hochzeitsgeschenk">Wedding Gift</h1>
-      <p class="lang" data-en="Your presence is the greatest gift! If you wish to contribute, here is how." 
-         data-pt="A sua presença é o maior presente! Se desejar contribuir, veja como."
-         data-de="Eure Anwesenheit ist das schönste Geschenk! Wenn ihr etwas beitragen möchtet, hier erfahrt ihr wie.">
-         Your presence is the greatest gift! If you wish to contribute, here is how.
+      
+      <p class="lang" 
+         data-en="Your presence is the biggest gift you can give us" 
+         data-pt="A vossa presença é o maior presente que nos podem dar"
+         data-de="Eure Anwesenheit ist das größte Geschenk, das ihr uns machen könnt">
+         Your presence is the biggest gift you can give us
       </p>
-      <!-- Add gift details here -->
+      
+      <p class="lang" 
+         data-en="If you wish to contribute to our honeymoon in Japan or for the wedding itself you can do so in one of the following ways:" 
+         data-pt="Se desejarem contribuir para a nossa lua de mel no Japão ou para o próprio casamento, podem fazê-lo de uma das seguintes formas:"
+         data-de="Wenn ihr zu unseren Flitterwochen in Japan oder zur Hochzeit selbst beitragen möchtet, könnt ihr dies auf eine der folgenden Arten tun:">
+         If you wish to contribute to our honeymoon in Japan or for the wedding itself you can do so in one of the following ways:
+      </p>
+      
+      <h3 class="lang" data-en="Switzerland:" data-pt="Suíça:" data-de="Schweiz:">Switzerland:</h3>
+      <p>IBAN - CH95 0023 5235 3188 5540 R</p>
+      <p class="lang" 
+         data-en="TWINT - Use David's number" 
+         data-pt="TWINT - Usem o número do David"
+         data-de="TWINT - Verwendet Davids Nummer">
+         TWINT - Use David's number
+      </p>
+      
+      <h3 class="lang" data-en="Portugal:" data-pt="Portugal:" data-de="Portugal:">Portugal:</h3>
+      <p>IBAN - PT50 0035 0995 0059 4268 8300 8</p>
+      <p class="lang" 
+         data-en="MBWAY - Use Rita's number" 
+         data-pt="MBWAY - Usem o número da Rita"
+         data-de="MBWAY - Verwendet Ritas Nummer">
+         MBWAY - Use Rita's number
+      </p>
+      
+      <h3 class="lang" data-en="Other countries:" data-pt="Outros países:" data-de="Andere Länder:">Other countries:</h3>
+      <p class="lang" 
+         data-en="Revolut or money in an envelope like a good mafioso ;)" 
+         data-pt="Revolut ou dinheiro num envelope como um bom mafioso ;)"
+         data-de="Revolut oder Geld in einem Umschlag wie ein guter Mafioso ;)">
+         Revolut or money in an envelope like a good mafioso ;)
+      </p>
     </div>
     <!-- Playlist page content (second to last) -->
     <div data-content="playlist" style="display:none;">
@@ -656,7 +739,7 @@
       </h1>
       <p class="lang"
          data-en="Enjoy the songs that will make our day special!"
-         data-pt="Desfrute das músicas que tornarão o nosso dia especial!"
+         data-pt="Desfrutem das músicas que tornarão o nosso dia especial!"
          data-de="Genießt die Lieder, die unseren Tag besonders machen!">
         Enjoy the songs that will make our day special!
       </p>
@@ -673,11 +756,11 @@
       </h1>
       <p class="lang"
          data-en="We'd love to see your memories from our wedding. Please upload your photos and videos using the link below:"
-         data-pt="Adoraríamos ver as suas memórias do nosso casamento. Por favor, carregue as suas fotos e vídeos usando o link abaixo:"
+         data-pt="Queremos ver o nosso dia pelos vossos olhos. Por favor carreguem aqui todas as fotografias e vídeos que fizerem durante o dia :)"
          data-de="Wir würden uns freuen, eure Erinnerungen von unserer Hochzeit zu sehen. Bitte ladet eure Fotos und Videos über den untenstehenden Link hoch:">
         We'd love to see your memories from our wedding. Please upload your photos and videos using the link below:
       </p>
-      <a href="https://www.dropbox.com/request/FdBlHCrH85W0kP5ZQc6Q" target="_blank" style="font-size:1.2em; color:#3498db;" class="lang"
+      <a href="https://www.dropbox.com/request/FdBlHCrH85W0kP5ZQc6Q" target="_blank" style="font-size:1.2em; color:#3A6604;" class="lang"
          data-en="📷 Upload to our Dropbox"
          data-pt="📷 Carregar para o nosso Dropbox"
          data-de="📷 Hochladen zu unserem Dropbox">
@@ -784,7 +867,7 @@
             location: 'Where to Stay - Our Wedding in Elvas',
             whattodo: 'What to Do - Our Wedding in Elvas',
             wheretoeat: 'Where to Eat - Our Wedding in Elvas',
-            babysitter: 'Babysitter - Our Wedding in Elvas',
+            informations: 'Informations - Our Wedding in Elvas',
             gift: 'Wedding Gift - Our Wedding in Elvas',
             playlist: 'Playlist - Our Wedding in Elvas',
             upload: 'Photo Upload - Our Wedding in Elvas'
@@ -795,7 +878,7 @@
             location: 'Onde Ficar - Nosso Casamento em Elvas',
             whattodo: 'O que Fazer - Nosso Casamento em Elvas',
             wheretoeat: 'Onde Comer - Nosso Casamento em Elvas',
-            babysitter: 'Babá - Nosso Casamento em Elvas',
+            babysitter: 'Babysitter - Nosso Casamento em Elvas',
             gift: 'Presente - Nosso Casamento em Elvas',
             playlist: 'Playlist - Nosso Casamento em Elvas',
             upload: 'Upload Fotos - Nosso Casamento em Elvas'
@@ -806,7 +889,7 @@
             location: 'Übernachtung - Unsere Hochzeit in Elvas',
             whattodo: 'Aktivitäten - Unsere Hochzeit in Elvas',
             wheretoeat: 'Restaurants - Unsere Hochzeit in Elvas',
-            babysitter: 'Babysitter - Unsere Hochzeit in Elvas',
+            informations: 'Informationen - Unsere Hochzeit in Elvas',
             gift: 'Geschenk - Unsere Hochzeit in Elvas',
             playlist: 'Playlist - Unsere Hochzeit in Elvas',
             upload: 'Foto Upload - Unsere Hochzeit in Elvas'
@@ -891,3 +974,4 @@
   </script>
 </body>
 </html>
+
