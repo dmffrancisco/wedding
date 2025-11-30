@@ -90,26 +90,34 @@
         background: #f8f8f8;
         font-size: 16px; /* Ensure readable font size on mobile */
       }
+      /* Default background for all pages */
       #bg-image {
-        position: relative !important;
         left: 0 !important;
-        top: auto !important;
+        top: 0 !important;
         width: 100vw !important;
-        height: 60vh !important;
-        background-position: center center !important;
+        height: 100vh !important;
+        background-position: center top !important;
         background-size: cover !important;
         background-repeat: no-repeat !important;
-        margin-top: 20px !important;
-        border-radius: 10px !important;
+        position: fixed !important;
       }
       
-      /* Special layout for mobile homepage */
-      body {
+      /* Special homepage mobile layout classes */
+      body.homepage-mobile {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         padding: 0 !important;
         margin: 0 !important;
+      }
+      
+      #bg-image.homepage-mobile {
+        position: relative !important;
+        top: auto !important;
+        height: 60vh !important;
+        background-position: center center !important;
+        margin-top: 20px !important;
+        border-radius: 10px !important;
       }
 
       .menu {
@@ -439,9 +447,9 @@
         Vacationing in Portugal:
       </h2>
       <p class="lang"
-         data-en="This is mostly for our international friends but can also apply for our Portuguese ones (&quot;Vá para fora cá dentro&quot; and all of that). If you plan to do vacation somewhere in Portugal, feel free to ask us for suggestions. We both love the Alentejo region and think Costa Vicentina is one of the best spots but depending on what you want to do, we can give more specific suggestions."
-         data-pt="Esta informação é principalmente para os nossos amigos internacionais, mas também se pode aplicar aos nossos amigos portugueses (&quot;Vá para fora cá dentro&quot; e tudo isso). Se planeiam fazer férias algures em Portugal, sintam-se à vontade para nos pedir sugestões. Ambos adoramos a região do Alentejo e achamos que a Costa Vicentina é uma óptima opção, mas dependendo do que querem fazer, podemos sugerir-vos algo mais específico."
-         data-de="Dies richtet sich hauptsächlich an unsere internationalen Freunde, kann aber auch für unsere portugiesischen gelten. Wenn Sie planen, irgendwo in Portugal Urlaub zu machen, zögern Sie nicht, uns nach Vorschlägen zu fragen. Wir beide lieben die Region Alentejo und denken, dass die Costa Vicentina einer der besten Orte ist, aber je nachdem, was Sie unternehmen möchten, können wir spezifischere Vorschläge machen.">
+         data-en="This is mostly for our international friends but can also apply for our Portuguese ones (&quot;Vá para fora cá dentro&quot; and all of that). If you plan to do vacation somewhere in Portugal, feel free to ask us for suggestions. We both love the Alentejo region and think Costa Alentejana and Vicentina is one of the best spots but depending on what you want to do, we can give more specific suggestions."
+         data-pt="Esta informação é principalmente para os nossos amigos internacionais, mas também se pode aplicar aos nossos amigos portugueses (&quot;Vá para fora cá dentro&quot; e tudo isso). Se planeiam fazer férias algures em Portugal, sintam-se à vontade para nos pedir sugestões. Ambos adoramos a região do Alentejo e achamos que a Costa Alentejana e  Vicentina é uma óptima opção, mas dependendo do que querem fazer, podemos sugerir-vos algo mais específico."
+         data-de="Dies richtet sich hauptsächlich an unsere internationalen Freunde, kann aber auch für unsere portugiesischen gelten. Wenn Sie planen, irgendwo in Portugal Urlaub zu machen, zögern Sie nicht, uns nach Vorschlägen zu fragen. Wir beide lieben die Region Alentejo und denken, dass die Costa Alentejana und Vicentina einer der besten Orte ist, aber je nachdem, was Sie unternehmen möchten, können wir spezifischere Vorschläge machen.">
         This is mostly for our international friends but can also apply for our Portuguese ones ("Vá para fora cá dentro" and all of that). If you plan to do vacation somewhere in Portugal, feel free to ask us for suggestions. We both love the Alentejo region and think Costa Vicentina is one of the best spots but depending on what you want to do, we can give more specific suggestions.
       </p>
       
@@ -834,6 +842,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       switchLanguage(currentLang);
       
+      // Initialize homepage mobile styling
+      updateHomepageMobileStyling();
+      
       // Hide loading overlay
       setTimeout(() => {
         document.getElementById('loadingOverlay').classList.add('hidden');
@@ -845,6 +856,11 @@
           .then(registration => console.log('SW registered'))
           .catch(error => console.log('SW registration failed'));
       }
+    });
+    
+    // Update mobile styling on window resize
+    window.addEventListener('resize', function() {
+      updateHomepageMobileStyling();
     });
     
     document.querySelectorAll('.lang-switch img').forEach(flag => {
@@ -917,8 +933,38 @@
         if (pageTitles[currentLang] && pageTitles[currentLang][page]) {
           document.title = pageTitles[currentLang][page];
         }
+        
+        // Update homepage mobile styling when navigating
+        updateHomepageMobileStyling();
       });
     });
+
+    // Function to detect mobile
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+    
+    // Apply homepage mobile styling
+    function updateHomepageMobileStyling() {
+      const isHomepage = isHomepageActive();
+      const mobile = isMobile();
+      const body = document.body;
+      const bgImage = document.getElementById('bg-image');
+      
+      if (isHomepage && mobile) {
+        body.classList.add('homepage-mobile');
+        if (bgImage) bgImage.classList.add('homepage-mobile');
+      } else {
+        body.classList.remove('homepage-mobile');
+        if (bgImage) bgImage.classList.remove('homepage-mobile');
+      }
+    }
+    
+    // Check if homepage is currently active
+    function isHomepageActive() {
+      const homeSection = document.querySelector('[data-content="home"]');
+      return homeSection && homeSection.style.display !== 'none';
+    }
 
     // Countdown clock for the wedding date
     function pad(n) { return n < 10 ? '0' + n : n; }
