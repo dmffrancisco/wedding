@@ -184,6 +184,14 @@
         background: rgba(255,255,255,0.95);
         position: relative !important;
         z-index: 10 !important;
+        min-height: calc(100vh - 90px);
+        box-sizing: border-box;
+      }
+      
+      /* Homepage mobile gets special styling with shorter content box */
+      body.homepage-mobile .content {
+        min-height: auto !important;
+        margin-bottom: 20px !important;
       }
       h1, h2, h3 {
         font-size: 1.25em;
