@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no">
   <meta name="description" content="Join us for our wedding celebration in Elvas, Portugal on September 12th, 2026. Find all the information you need for our special day.">
   <meta name="keywords" content="wedding, casamento, Hochzeit, Elvas, Portugal, September 2026">
   <meta name="author" content="Wedding Couple">
@@ -160,11 +161,11 @@
         position: fixed;
         top: 12px;
         right: 12px;
-        z-index: 100;
-        background: rgba(255,255,255,0.85);
+        z-index: 1000;
+        background: rgba(255,255,255,0.95);
         border-radius: 16px;
         padding: 2px 6px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       }
       .lang-switch img {
         width: 28px;
@@ -339,7 +340,7 @@
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-spinner"></div>
   </div>
-  <button id="menu-toggle" aria-label="Open menu" style="display:none;position:fixed;top:12px;left:12px;z-index:100;background:#fff;border:none;padding:8px 12px;border-radius:8px;box-shadow:0 2px 8px #0002;">
+  <button id="menu-toggle" aria-label="Open menu" style="display:none;position:fixed;top:12px;left:12px;z-index:1001;background:#fff;border:none;padding:8px 12px;border-radius:8px;box-shadow:0 2px 8px #0002;">
     <span style="font-size:2em;">&#9776;</span>
   </button>
   <nav class="menu">
@@ -435,7 +436,7 @@
       <!-- Google Maps widget -->
       <div style="margin-top:20px; text-align:center;">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.6887768597426!2d-7.2060975!3d38.8853618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd171ba3f8ec8e55%3A0x20fb7823b6123ec3!2sQuinta%20do%20Pomarinho%2C%20Elvas%2C%20Portugal!5e0!3m2!1sen!2spt!4v1716220000000!5m2!1sen!2spt"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1622871.7135704691!2d-8.5!3d39.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd171ba3f8ec8e55%3A0x20fb7823b6123ec3!2sElvas%2C%20Portugal!5e0!3m2!1sen!2spt!4v1716220000000!5m2!1sen!2spt"
           width="350" height="350" style="border:0; border-radius:10px; display:inline-block; max-width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -745,7 +746,7 @@
       </p>
       
       <h3 class="lang" data-en="Switzerland:" data-pt="Suíça:" data-de="Schweiz:">Switzerland:</h3>
-      <p>IBAN - CH95 0023 5235 3188 5540 R</p>
+      <p><span style="pointer-events: none; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">IBAN - CH95 0023 5235 3188 5540 R</span></p>
       <p class="lang" 
          data-en="TWINT - Use David's number" 
          data-pt="TWINT - Usem o número do David"
@@ -754,7 +755,7 @@
       </p>
       
       <h3 class="lang" data-en="Portugal:" data-pt="Portugal:" data-de="Portugal:">Portugal:</h3>
-      <p>IBAN - PT50 0035 0995 0059 4268 8300 8</p>
+      <p><span style="pointer-events: none; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">IBAN - PT50 0035 0995 0059 4268 8300 8</span></p>
       <p class="lang" 
          data-en="MBWAY - Use Rita's number" 
          data-pt="MBWAY - Usem o número da Rita"
